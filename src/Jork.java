@@ -4,5 +4,6 @@ public class Jork {
         int n = 9;
 
         System.out.println("Can you be a weeb if you're asian?");
+        System.out.println("I am not qualified to answer that.");
     }
 }
