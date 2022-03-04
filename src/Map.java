@@ -1,3 +1,8 @@
+/**
+ * A class for builder and using the Map object. Home for move().
+ * @author alexb
+ * @version 1.0
+ */
 public class Map {
     private int spaceID;
     Space[] spaces;
