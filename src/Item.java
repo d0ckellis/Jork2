@@ -29,7 +29,22 @@ public enum Item {
     /**
      * Parchment
      */
-    PARCHMENT("PARCHMENT");
+    PARCHMENT("PARCHMENT"),
+    /**
+     * Cloak
+     */
+    CLOAK("CLOAK"),
+    /**
+     * Marker
+     */
+    MARKER("MARKER"),
+    /**
+     * Necklace
+     */
+    NECKLACE("NECKLACE");
+
+
+
 
 
     /**
