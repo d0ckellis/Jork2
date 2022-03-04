@@ -1,2 +1,2 @@
-public interface Map {
+public class Map {
 }
