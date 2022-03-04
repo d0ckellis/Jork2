@@ -5,7 +5,6 @@ public class Jork {
     }
 
     public static void gameBuilder() {
-
     }
 
     public static void consoleWipe() {
