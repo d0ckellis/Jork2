@@ -1,6 +1,6 @@
 /**
  * An enumeration for items to be stored in the {@link Inventory#inventory} {@code HashMap}.
- * @author jaspesn
+ * @author jaspersn
  * @author alexb
  * @version 1.1
  */
@@ -29,7 +29,22 @@ public enum Item {
     /**
      * Parchment
      */
-    PARCHMENT("PARCHMENT");
+    PARCHMENT("PARCHMENT"),
+    /**
+     * Cloak
+     */
+    CLOAK("CLOAK"),
+    /**
+     * Marker
+     */
+    MARKER("MARKER"),
+    /**
+     * Necklace
+     */
+    NECKLACE("NECKLACE");
+
+
+
 
 
     /**
