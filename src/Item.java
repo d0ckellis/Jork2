@@ -1,7 +1,8 @@
 /**
  * An enumeration for items to be stored in the {@link Inventory#inventory} {@code HashMap}.
  * @author jaspesn
- * @version 1.0
+ * @author alexb
+ * @version 1.1
  */
 public enum Item {
 
@@ -24,7 +25,12 @@ public enum Item {
     /**
      * Key
      */
-    KEY("KEY");
+    KEY("KEY"),
+    /**
+     * Parchment
+     */
+    PARCHMENT("PARCHMENT");
+
 
     /**
      * The {@code String} corresponding to a particular value of the enumeration.
