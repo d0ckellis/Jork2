@@ -1,47 +1,44 @@
 public class Player {
+    private Inventory inventory;
     String name;
     int power;
     int intelligence;
     int agility;
 
     //creating getter and setter for name and power of player
-    public void setName(String n) {
+    private void setName(String n) {
         name = n;
-        System.out.println ("Player 1 set your name: ");
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public void setPower(int p) {
+    private void setPower(int p) {
         power = p;
     }
 
-    public int getPower() {
+    private int getPower() {
         return power;
     }
 
-    public void setIntelligence(int smart) {
+    private void setIntelligence(int smart) {
         intelligence = smart;
     }
 
-    public int getIntelligence() {
+    private int getIntelligence() {
         return intelligence;
     }
 
-    public void setAgility(int a) {
+    private void setAgility(int a) {
         agility = a;
     }
 
-    public int getAgility() {
+    private int getAgility() {
         return agility;
     }
 
-    private Inventory inventory;
-
-
-
-
-
+    private Inventory getInventory() {
+        return inventory;
+    }
 }
