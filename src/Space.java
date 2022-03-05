@@ -1,3 +1,8 @@
+/**
+ * Space class for creation of space objects which make up the Map array, and consist of the game spaces.
+ * @author alexl
+ * @version 1.1
+ */
 public class Space {
 
     private boolean hasItem;

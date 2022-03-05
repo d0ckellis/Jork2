@@ -56,7 +56,7 @@ public enum Item {
      * Constructs a new {@link Item} with the specified {@code String}.
      * @param key The {@code String}.
      */
-    Item(final String key) {
+    Item(String key) {
         this.key = key;
     }
 

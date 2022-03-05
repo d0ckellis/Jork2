@@ -4,26 +4,53 @@
  * @version 1.0
  */
 public class Map {
-    private int spaceID;
+    private final int startPosition;
+    private final int width;
+    private final int height;
+    private int curPosition;
     Space[] map;
+
     private Map(Builder builder) {
-        this.spaceID = builder.startPosition;
+        this.startPosition = builder.startPosition;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.curPosition = builder.curPosition;
         this.map = builder.map;
     }
 
-    public int getSpaceID() {return spaceID;}
+    public int getStartPosition() {return startPosition;}
+
+    public int getWidth() {return width;}
+
+    public int getHeight() {return height;}
+
+    public int getCurPosition() {return curPosition;}
 
     public static class Builder {
-        private int startPosition;
+        private final int startPosition;
+        private final int width;
+        private final int height;
+        private int curPosition;
         Space[] map;
 
-        public Builder (int spaceID, Space[] spaces) {
-            this.startPosition = spaceID;
-            this.map = spaces;
+        public Builder (int startPosition, int width, int height, int curPosition, Space[] map) {
+            this.startPosition = startPosition;
+            this.width = width;
+            this.height = height;
+            this.curPosition = curPosition;
+            this.map = map;
         }
     }
-    public int move() {
+    public void move() {
 
-        return spaceID;
+    }
+    public int moveRight() {
+        if (curPosition + 1 % width == 0) {
+            invalidMove();
+        } else curPosition++;
+        return curPosition;
+    }
+    public void invalidMove() {
+        System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
     }
 }

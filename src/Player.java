@@ -1,3 +1,10 @@
+/**
+ * Player class for creation of player objects to store various player relevant fields.
+ * @author allyv
+ * @author alexb
+ * @version 1.1
+ */
+
 public class Player {
     private Inventory inventory;
     String name;
