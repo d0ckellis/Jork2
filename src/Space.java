@@ -3,7 +3,7 @@
  * @author alexl
  * @version 1.1
  */
-public class Space {
+public class Space{
 
     private boolean hasItem;
     private final String descriptNoItem;
@@ -13,9 +13,12 @@ public class Space {
         this.hasItem = hasItem;
         this.descriptNoItem = descriptNoItem;
         this.descriptHasItem = descriptHasItem;
+
     }
 
     public boolean getHasItem() {return hasItem;}
+
+    public void setHasItem() {hasItem = !hasItem;}
 
     public String getDescriptNoItem() {return descriptNoItem;}
 
