@@ -5,7 +5,7 @@
  */
 public class GameManager {
     public String startUp = "Booting...\nWelcome to Jork!\nA text-based Role-Playing game where you choose your journey!";
-    public String gameOver = "Your journey has no come to an end...";
+    public String gameOver = "Your journey has now come to an end...";
     public String namePrompt = "What's our hero's name?";
     public String perkPrompt = "";
 }
