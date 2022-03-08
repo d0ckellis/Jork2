@@ -5,8 +5,11 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Jork {
+    private static final Scanner CONSOLE = new Scanner(System.in);
+    public Scanner getScanner() {
+        return CONSOLE;
+    }
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
         System.out.println("Starting Jork...");
     }
 }
