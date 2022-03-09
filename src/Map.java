@@ -55,50 +55,49 @@ public class Map {
                 case "NORTH":
                 case "N":
                 case "UP":
-                    curPosition = moveUp();
+                    moveUp();
                     break;
                 case "SOUTH":
                 case "S":
                 case "DOWN":
-                    curPosition = moveDown();
+                    moveDown();
                     break;
                 case "EAST":
                 case "E":
                 case "RIGHT":
-                    curPosition = moveRight();
+                    moveRight();
                     break;
                 case "WEST":
                 case "W":
                 case "LEFT":
-                    curPosition = moveLeft();
+                    moveLeft();
                     break;
                 default:
                     System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
                     move();
             }
     }
-    public int moveRight() {
+    private Space moveRight() {
         if (curPosition + 1 % getWidth() == 0) invalidMove();
         else curPosition++;
-
-        return curPosition;
+        return map[curPosition];
     }
-    public int moveLeft() {
+    private Space moveLeft() {
         if(curPosition % getWidth() == 0) invalidMove();
         else curPosition--;
-        return curPosition;
+        return map[curPosition];
     }
-    public int moveUp() {
+    private Space moveUp() {
         if(curPosition - getWidth() < 0) invalidMove();
         else curPosition-= getWidth();
-        return curPosition;
+        return map[curPosition];
     }
-    public int moveDown() {
+    private Space moveDown() {
         if(curPosition + getWidth() >= getWidth() * getHeight()) invalidMove();
         else curPosition+= getWidth();
-        return curPosition;
+        return map[curPosition];
     }
-    public void invalidMove() {
+    private void invalidMove() {
         System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
         move();
     }

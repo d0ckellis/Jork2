@@ -30,8 +30,9 @@ public class Setup {
         buildChapterOneSpaces(spacesChapOne);
         //build the map
         Map chOneMap = new Map.Builder(console, 0, 3, 3, spacesChapOne).build();
+        chOneMap.move();
     }
-    //probably should be buildChapterOne and build the Spaces, Map, and Player objects for chapter one.
+
     public Space[] buildChapterOneSpaces(Space[] spaces) {
         Description chapterOne = new Description();
 
