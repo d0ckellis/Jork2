@@ -1,4 +1,3 @@
-import java.util.Scanner;
 /**
  * The main program that runs the {@link GameManager}
  * @author andyh
@@ -6,7 +5,7 @@ import java.util.Scanner;
  */
 public class Jork {
 
-    public static void main(String[] args) {
+    public static void main(Description[] args) {
         System.out.println("Starting Jork...");
     }
 }

@@ -1,15 +1,15 @@
 public class Player {
-    String name;
+    Description name;
     int power;
     int intelligence;
     int agility;
 
     //creating getter and setter for name and power of player
-    public void setName(String n) {
+    public void setName(Description n) {
         name = n;
     }
 
-    public String getName() {
+    public Description getName() {
         return name;
     }
 

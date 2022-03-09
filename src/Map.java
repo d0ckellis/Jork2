@@ -43,6 +43,9 @@ public class Map {
             this.height = height;
             this.map = map;
         }
+        public Map build() {
+            return new Map(this);
+        }
     }
     public void move() {
         System.out.println("\nWhich direction would you like to move? ");
@@ -52,44 +55,47 @@ public class Map {
                 case "NORTH":
                 case "N":
                 case "UP":
-                    moveUp();
+                    curPosition = moveUp();
                     break;
                 case "SOUTH":
                 case "S":
                 case "DOWN":
-                    moveDown();
+                    curPosition = moveDown();
                     break;
                 case "EAST":
                 case "E":
                 case "RIGHT":
-                    moveRight();
+                    curPosition = moveRight();
                     break;
                 case "WEST":
                 case "W":
                 case "LEFT":
-                    moveLeft();
+                    curPosition = moveLeft();
                     break;
-
+                default:
+                    System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
+                    move();
             }
     }
     public int moveRight() {
-        if (curPosition + 1 % width == 0) invalidMove();
+        if (curPosition + 1 % getWidth() == 0) invalidMove();
         else curPosition++;
+
         return curPosition;
     }
     public int moveLeft() {
-        if(curPosition % width == 0) invalidMove();
+        if(curPosition % getWidth() == 0) invalidMove();
         else curPosition--;
         return curPosition;
     }
     public int moveUp() {
-        if(curPosition - width < 0) invalidMove();
-        else curPosition-= width;
+        if(curPosition - getWidth() < 0) invalidMove();
+        else curPosition-= getWidth();
         return curPosition;
     }
     public int moveDown() {
-        if(curPosition + width >= width * height) invalidMove();
-        else curPosition+= width;
+        if(curPosition + getWidth() >= getWidth() * getHeight()) invalidMove();
+        else curPosition+= getWidth();
         return curPosition;
     }
     public void invalidMove() {
