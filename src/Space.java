@@ -8,11 +8,13 @@ public class Space{
     private boolean hasItem;
     private final String descriptNoItem;
     private final String descriptHasItem;
+    private final Item item;
 
-    public Space(Boolean hasItem, String descriptNoItem, String descriptHasItem) {
+    public Space(Boolean hasItem, String descriptNoItem, String descriptHasItem, Item item) {
         this.hasItem = hasItem;
         this.descriptNoItem = descriptNoItem;
         this.descriptHasItem = descriptHasItem;
+        this.item = item;
 
     }
 
@@ -25,7 +27,7 @@ public class Space{
     public String getDescriptHasItem() {return descriptHasItem;}
 
     //placeholder for take method
-    public String take()  {
+    public String take() {
         String string = "";
         return string;
 

@@ -5,6 +5,7 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Setup {
+
     /**
      * A boolean responsible for determining whether our game has started
      */
@@ -23,7 +24,7 @@ public class Setup {
     /**
      * A builder class for our game
      */
-    public static void gameBuilder(Scanner console) {
-
+    public void gameBuilder(Scanner console) {
+        //Space space0 = new Space(false, space0Description, "", Item.NAILS);
     }
 }
