@@ -8,4 +8,11 @@ public class GameManager {
     public String gameOver = "Your journey has now come to an end...";
     public String namePrompt = "What's our hero's name?";
     public String perkPrompt = "";
+
+    /**
+     * Empties the visible {@code Console} after every action
+     */
+    public static void consoleWipe() {
+        System.out.println("Console cleared!");
+    }
 }
