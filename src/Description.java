@@ -1,6 +1,6 @@
 public class Description {
-    String DescriptSpace0Item = "";
-    String DescriptSpace0NoItem = "";
+    String.ch1 DescriptSpace0Item = "";
+    String.ch1 DescriptSpace0NoItem = "";
 
     String DescriptSpace1Item = "";
     String DescriptSpace1NoItem = "";
