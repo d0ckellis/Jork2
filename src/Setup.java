@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * A class for our {@link Setup#gameBuilder} and {@link Setup#consoleWipe}
+ * A class for our {@link Setup#gameBuilder}
  * @author andyh
  * @version 1.0
  */
@@ -24,13 +24,6 @@ public class Setup {
      * A builder class for our game
      */
     public static void gameBuilder(Scanner console) {
-
-    }
-
-    /**
-     * Empties the visible {@code Console} after every action
-     */
-    public static void consoleWipe() {
 
     }
 }
