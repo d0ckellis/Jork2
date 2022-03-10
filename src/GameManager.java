@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * A class to store the various strings to be printed into the console.
+ * A class to store the various methods responsible for game management
  * @author andyh
  * @author alexb
  * @version 1.1
@@ -11,10 +11,7 @@ public class GameManager {
     private final Map map;
     private final Player player;
     private final Space space;
-    public String startUp = "Booting...\nWelcome to Jork!\nA text-based Role-Playing game where you choose your journey!";
-    public String gameOver = "Your journey has now come to an end...";
-    public String namePrompt = "What's our hero's name?";
-    public String perkPrompt = "";
+
 
     public GameManager(Scanner console, Map map, Player player, Space space) {
         this.console = console;
