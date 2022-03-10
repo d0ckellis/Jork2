@@ -10,23 +10,38 @@ public class Description {
     //we are almost certainly going to need to read these from a file to make this readable.
     //going to sleep on it and see if I can come up with an alt solution
 
-    String descriptSpace0WithNoInvItems = "";
-    String descriptSpace0WithInvItem1 = "";
-    String descriptSpace0WithoutInvItem1 = "";
-    String descriptSpace0WithInvItem2 = "";
-    String descriptSpace0WithoutInvItem2 = "";
+
+    //Item: Nail
+    String descriptSpace0WithNoInvItems =
+            "\tYou stub your toe on two nails protruding from the floorboards,\n" +
+            "\tDid you do this last night too or is it just deja vu?\n" +
+            "\tIt seems you're doomed to keep repeating this misfortune.\n" +
+            "\tYour bed awaits your fated return.";
+    String descriptSpace0WithInvItem1 = "\tYour bed awaits your fated return.";
+    //background items cannot pick up
     String descriptSpace0NonInvItem1 = "";
     String descriptSpace0NonInvItem2 = "";
 
-    String descriptSpace1WithNoInvItems = "";
-    String descriptSpace1WithInvItem1 = "";
+    //Item: Sword
+    String descriptSpace1WithNoInvItems =
+            "\tYou swear you left your sword here on the nightstand.\n" +
+            "\tOh, wait, you've already sheathed it.";
+    String descriptSpace1WithInvItem1 =
+            "\tOn the nightstand lay your unsheathed sword.\n" +
+            "\tIt's not particularly menacing or large, but everyone says size doesn't matter, right? \n" +
+            "\tDon't forget it on your way out!";
     String descriptSpace1WithoutInvItem1 = "";
     String descriptSpace1WithInvItem2 = "";
     String descriptSpace1WithoutInvItem2 = "";
     String descriptSpace1NonInvItem1 = "";
     String descriptSpace1NonInvItem2 = "";
 
-    String descriptSpace2WithNoInvItems = "";
+    //Window: Option: Jump/No Jump
+    String descriptSpace2WithNoInvItems = "\tThe window looks out to the courtyard behind the inn.\n" +
+            "\tEither the sun is closer to the Earth than normal or your eyes are overly sensitive due to you hangover.\\n\" +\n" +
+            "\tI'll let you decide which is the case.\n" +
+            "\tYou can barely make out a horse pen across from your window if you squint.\n" +
+            "\tMight be a good escape if your knees can handle the fall!\");";
     String descriptSpace2WithInvItem1 = "";
     String descriptSpace2WithoutInvItem1 = "";
     String descriptSpace2WithInvItem2 = "";
@@ -34,17 +49,28 @@ public class Description {
     String descriptSpace2NonInvItem1 = "";
     String descriptSpace2NonInvItem2 = "";
 
-    String descriptSpace3WithNoInvItems = "";
-    String descriptSpace3WithInvItem1 = "";
+    //Item: Marker
+    String descriptSpace3WithNoInvItems = "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
+            "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.";
+    String descriptSpace3WithInvItem1 = "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
+            "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.\n" +
+            "\tA box with a magic marker sits open on the bench.";
     String descriptSpace3WithoutInvItem1 = "";
     String descriptSpace3WithInvItem2 = "";
     String descriptSpace3WithoutInvItem2 = "";
     String descriptSpace3NonInvItem1 = "";
     String descriptSpace3NonInvItem2 = "";
 
-    String descriptSpace4WithNoInvItems = "";
-    String descriptSpace4WithInvItem1 = "";
-    String descriptSpace4WithoutInvItem1 = "";
+    String descriptSpace4WithNoInvItems =
+            "\tThere is a trapdoor hidden underneath the rug.\n" +
+            "\tSomehow you hadn't noticed it before.\n";
+    String descriptSpace4WithInvItem1 =
+            "\tThe trapdoor remains open, as you left it.\n" +
+            "\tEmpty of its contents.\");";
+    String descriptSpace4WithoutInvItem1 =
+            "\tThe rug on the floor, that is embroidered to look like the night sky, looks like it has been moved recently.\n" +
+            "\tMaybe the last guest who stayed in this room hid treasures underneath the floorboards!\n" +
+            "\tOr maybe that sound you hear at night is just the beating of the previous tenant's hideous heart.\n";
     String descriptSpace4WithInvItem2 = "";
     String descriptSpace4WithoutInvItem2 = "";
     String descriptSpace4NonInvItem1 = "";
@@ -58,8 +84,12 @@ public class Description {
     String descriptSpace5NonInvItem1 = "";
     String descriptSpace5NonInvItem2 = "";
 
-    String descriptSpace6WithNoInvItems = "";
-    String descriptSpace6WithInvItem1 = "";
+    String descriptSpace6WithNoInvItems =
+            "\tThe bookshelf is mostly dusty, but for the outline of the parchment that now is in your pocket.\n";
+    String descriptSpace6WithInvItem1 =
+            "\tBehind the armoire is a tall bookshelf covered in a thick layer of dust.\n" +
+            "\tYou see some old piece of parchment.\n" +
+            "\tIt might be useful, or it might be rubbish.\n";
     String descriptSpace6WithoutInvItem1 = "";
     String descriptSpace6WithInvItem2 = "";
     String descriptSpace6WithoutInvItem2 = "";
@@ -74,8 +104,14 @@ public class Description {
     String descriptSpace7NonInvItem1 = "";
     String descriptSpace7NonInvItem2 = "";
 
-    String descriptSpace8WithNoInvItems = "";
-    String descriptSpace8WithInvItem1 = "";
+    String descriptSpace8WithNoInvItems =
+            "\tThe chair, that once had your cloak upon it, sits in the corner.\n" +
+            "\tAs does the jar. Ew.\n";
+    String descriptSpace8WithInvItem1 = "\tYou pick up your cloak from the chair.\n" +
+            "\tIt's full of holes, but for some reason this town has a no cloak, no boots, no service policy, so you keep wearing it.\n" +
+            "\tYou should really find a job soon as winter is coming and this cloak won't hold out much longer\n" +
+            "\tIs something you keep telling yourself.\n" +
+            "\tThere's a jar you've used as a latrine in the corner. It's filled with...liquid. Gross.\n";
     String descriptSpace8WithoutInvItem1 = "";
     String descriptSpace8WithInvItem2 = "";
     String descriptSpace8WithoutInvItem2 = "";
@@ -89,18 +125,6 @@ public class Description {
 
     public String getDescriptSpace0WithInvItem1() {
         return descriptSpace0WithInvItem1;
-    }
-
-    public String getDescriptSpace0WithoutInvItem1() {
-        return descriptSpace0WithoutInvItem1;
-    }
-
-    public String getDescriptSpace0WithInvItem2() {
-        return descriptSpace0WithInvItem2;
-    }
-
-    public String getDescriptSpace0WithoutInvItem2() {
-        return descriptSpace0WithoutInvItem2;
     }
 
     public String getDescriptSpace0NonInvItem1() {
