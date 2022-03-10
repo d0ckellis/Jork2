@@ -37,7 +37,8 @@ public class Description {
     String descriptSpace1NonInvItem2 = "";
 
     //Window: Option: Jump/No Jump
-    String descriptSpace2WithNoInvItems = "\tThe window looks out to the courtyard behind the inn.\n" +
+    String descriptSpace2WithNoInvItems =
+            "\tThe window looks out to the courtyard behind the inn.\n" +
             "\tEither the sun is closer to the Earth than normal or your eyes are overly sensitive due to you hangover.\\n\" +\n" +
             "\tI'll let you decide which is the case.\n" +
             "\tYou can barely make out a horse pen across from your window if you squint.\n" +
@@ -50,9 +51,11 @@ public class Description {
     String descriptSpace2NonInvItem2 = "";
 
     //Item: Marker
-    String descriptSpace3WithNoInvItems = "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
+    String descriptSpace3WithNoInvItems =
+            "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
             "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.";
-    String descriptSpace3WithInvItem1 = "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
+    String descriptSpace3WithInvItem1 =
+            "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
             "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.\n" +
             "\tA box with a magic marker sits open on the bench.";
     String descriptSpace3WithoutInvItem1 = "";
@@ -96,7 +99,9 @@ public class Description {
     String descriptSpace6NonInvItem1 = "";
     String descriptSpace6NonInvItem2 = "";
 
-    String descriptSpace7WithNoInvItems = "";
+    String descriptSpace7WithNoInvItems =
+        "\tYou can see the edge of the brass key, hanging over the edge of the door jam.\n" +
+        "\tIt's almost fallen off from all the knocking.";
     String descriptSpace7WithInvItem1 = "";
     String descriptSpace7WithoutInvItem1 = "";
     String descriptSpace7WithInvItem2 = "";
