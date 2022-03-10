@@ -77,25 +77,25 @@ public class Map {
                     move();
             }
     }
-    private Space moveRight() {
+    private String moveRight() {
         if (curPosition + 1 % getWidth() == 0) invalidMove();
         else curPosition++;
-        return map[curPosition];
+        return map[curPosition].printDescript();
     }
-    private Space moveLeft() {
+    private String moveLeft() {
         if(curPosition % getWidth() == 0) invalidMove();
         else curPosition--;
-        return map[curPosition];
+        return map[curPosition].printDescript();
     }
-    private Space moveUp() {
+    private String moveUp() {
         if(curPosition - getWidth() < 0) invalidMove();
         else curPosition-= getWidth();
-        return map[curPosition];
+        return map[curPosition].printDescript();
     }
-    private Space moveDown() {
+    private String moveDown() {
         if(curPosition + getWidth() >= getWidth() * getHeight()) invalidMove();
         else curPosition+= getWidth();
-        return map[curPosition];
+        return map[curPosition].printDescript();
     }
     private void invalidMove() {
         System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
