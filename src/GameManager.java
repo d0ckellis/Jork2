@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * A class to store the various methods responsible for game management
  * @author andyh

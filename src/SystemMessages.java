@@ -1,14 +1,26 @@
 /**
  * A collection to hold all string objects used in game.
  * @author andyh
- * @version 1.0
+ * @author alexb
+ * @version 1.1
  */
 public class SystemMessages {
     /**
      * Strings used outside the story
      */
-    public String startUp = "Booting...\nWelcome to Jork!\n" +
-            "A text-based Role-Playing game where you choose your journey!";
+    public String startUp = "Booting...\n\n\nWelcome to \n\n\n" +
+            "    ▄█  ▄██████▄     ▄████████    ▄█   ▄█▄\n" +
+            "    ███ ███    ███   ███    ███   ███ ▄███▀\n" +
+            "    ███ ███    ███   ███    ███   ███▐██▀  \n" +
+            "    ███ ███    ███  ▄███▄▄▄▄██▀  ▄█████▀   \n" +
+            "    ███ ███    ███ ▀▀███▀▀▀▀▀   ▀▀█████▄   \n" +
+            "    ███ ███    ███ ▀███████████   ███▐██▄  \n" +
+            "    ███ ███    ███   ███    ███   ███ ▀███▄\n" +
+            "█▄ ▄███  ▀██████▀    ███    ███   ███   ▀█▀\n" +
+            "▀▀▀▀▀▀               ███    ███   ▀        \n" +
+            "                \n" +
+            "       created by Alex Black, Andy Han, Anh Ngoc Vu, and Trevor Parker\n\n" +
+            "       A text-based Role-Playing game where you choose your journey!";
     public String gameOver = "Your journey has now come to an end...";
     public String replayPrompt = "Would you like to play again? (Y/N)";
 

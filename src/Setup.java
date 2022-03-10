@@ -39,7 +39,7 @@ public class Setup {
         Description chapterOne = new Description();
 
         spaces[0] = new Space.Builder(false, chapterOne.getDescriptSpace0WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace0WithoutInvItem1())
+                        .descriptHasItem(chapterOne.getDescriptSpace0WithInvItem1())
                         .descriptNonInventoryItem(chapterOne.getDescriptSpace0NonInvItem1())
                         .descriptSecondNonInventoryItem(chapterOne.getDescriptSpace0NonInvItem2())
                         .item(Item.NAILS)
