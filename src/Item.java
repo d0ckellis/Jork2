@@ -50,21 +50,21 @@ public enum Item {
     /**
      * The {@code String} corresponding to a particular value of the enumeration.
      */
-    private final String key;
+    private final String description;
 
     /**
      * Constructs a new {@link Item} with the specified {@code String}.
-     * @param key The {@code String}.
+     * @param description The {@code String}.
      */
-    Item(String key) {
-        this.key = key;
+    Item(String description) {
+        this.description = description;
     }
 
     /**
      * Returns the {@code String} corresponding to a particular value of the enumeration.
      * @return the {@code String} corresponding to a particular value of the enumeration.
      */
-    public String getKey() {
-        return key;
+    public String getDescription() {
+        return description;
     }
 }

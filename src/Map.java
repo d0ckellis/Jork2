@@ -43,6 +43,9 @@ public class Map {
             this.height = height;
             this.map = map;
         }
+        public Map build() {
+            return new Map(this);
+        }
     }
     public void move() {
         System.out.println("\nWhich direction would you like to move? ");
@@ -69,30 +72,32 @@ public class Map {
                 case "LEFT":
                     moveLeft();
                     break;
-
+                default:
+                    System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
+                    move();
             }
     }
-    public int moveRight() {
-        if (curPosition + 1 % width == 0) invalidMove();
+    private Space moveRight() {
+        if (curPosition + 1 % getWidth() == 0) invalidMove();
         else curPosition++;
-        return curPosition;
+        return map[curPosition];
     }
-    public int moveLeft() {
-        if(curPosition % width == 0) invalidMove();
+    private Space moveLeft() {
+        if(curPosition % getWidth() == 0) invalidMove();
         else curPosition--;
-        return curPosition;
+        return map[curPosition];
     }
-    public int moveUp() {
-        if(curPosition - width < 0) invalidMove();
-        else curPosition-= width;
-        return curPosition;
+    private Space moveUp() {
+        if(curPosition - getWidth() < 0) invalidMove();
+        else curPosition-= getWidth();
+        return map[curPosition];
     }
-    public int moveDown() {
-        if(curPosition + width >= width * height) invalidMove();
-        else curPosition+= width;
-        return curPosition;
+    private Space moveDown() {
+        if(curPosition + getWidth() >= getWidth() * getHeight()) invalidMove();
+        else curPosition+= getWidth();
+        return map[curPosition];
     }
-    public void invalidMove() {
+    private void invalidMove() {
         System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
         move();
     }
