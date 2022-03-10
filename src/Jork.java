@@ -10,7 +10,5 @@ public class Jork {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Starting Jork...");
-        Setup setup = new Setup();
-        setup.gameBuilder(console);
     }
 }

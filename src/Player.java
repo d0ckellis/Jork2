@@ -1,24 +1,33 @@
-public class Player {
-    Description name;
-    int power;
-    int intelligence;
-    int agility;
+import java.util.Scanner;
 
-    //creating getter and setter for name and power of player
-    public void setName(Description n) {
-        name = n;
+public class Player {
+    private final Scanner console;
+    public String name;
+    public int strength;
+    public int intelligence;
+    public int agility;
+
+    private Player(Builder builder) {
+        this.console = builder.console;
+        this.name = builder.name;
+        this.strength = builder.strength;
+        this.intelligence = builder.intelligence;
+        this.agility = builder.agility;
     }
 
-    public Description getName() {
+    //creating getter and setter for name and power of player
+    public void setName(String n) {name = n;}
+
+    public String getName() {
         return name;
     }
 
     public void setPower(int p) {
-        power = p;
+        strength = p;
     }
 
     public int getPower() {
-        return power;
+        return strength;
     }
 
     public void setIntelligence(int smart) {
@@ -38,6 +47,22 @@ public class Player {
     }
 
     private Inventory inventory;
+
+    public static class Builder {
+        private final Scanner console;
+        public String name;
+        public int strength;
+        public int intelligence;
+        public int agility;
+
+        public Builder(Scanner console, String name, int strength, int intelligence, int agility) {
+            this.console = console;
+            this.name = name;
+            this.strength = strength;
+            this.intelligence = intelligence;
+            this.agility = agility;
+        }
+    }
 
 
 
