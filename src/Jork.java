@@ -3,12 +3,13 @@ import java.util.Scanner;
 /**
  * The main program that runs the {@link GameManager}
  * @author andyh
- * @version 1.0
+ * @author alexl
+ * @version 1.1
  */
 public class Jork {
-
+    protected static final Scanner CONSOLE = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
         System.out.println("Starting Jork...");
+        GameManager gameManager = new GameManager();
     }
 }

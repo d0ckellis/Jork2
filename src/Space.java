@@ -142,6 +142,11 @@ public class Space{
         }
     }
 
+    public String getDescript() {
+        if (hasItem)  return description;
+        else return descriptHasItem;
+    }
+
     //placeholder for take method
     /*public String take() {
         String string = "";

@@ -36,8 +36,8 @@ public class Map {
         private final int height;
         Space[] map;
 
-        public Builder (Scanner console, int startPosition, int width, int height, Space[] map) {
-            this.console = console;
+        public Builder (int startPosition, int width, int height, Space[] map) {
+            this.console = Jork.CONSOLE;
             this.startPosition = startPosition;
             this.width = width;
             this.height = height;
@@ -55,47 +55,47 @@ public class Map {
                 case "NORTH":
                 case "N":
                 case "UP":
-                    moveUp();
+                    System.out.println(moveUp());
                     break;
                 case "SOUTH":
                 case "S":
                 case "DOWN":
-                    moveDown();
+                    System.out.println(moveDown());
                     break;
                 case "EAST":
                 case "E":
                 case "RIGHT":
-                    moveRight();
+                    System.out.println(moveRight());
                     break;
                 case "WEST":
                 case "W":
                 case "LEFT":
-                    moveLeft();
+                    System.out.println(moveLeft());
                     break;
                 default:
                     System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
                     move();
             }
     }
-    private Space moveRight() {
+    private String moveRight() {
         if (curPosition + 1 % getWidth() == 0) invalidMove();
         else curPosition++;
-        return map[curPosition];
+        return map[curPosition].getDescript();
     }
-    private Space moveLeft() {
+    private String moveLeft() {
         if(curPosition % getWidth() == 0) invalidMove();
         else curPosition--;
-        return map[curPosition];
+        return map[curPosition].getDescript();
     }
-    private Space moveUp() {
+    private String moveUp() {
         if(curPosition - getWidth() < 0) invalidMove();
         else curPosition-= getWidth();
-        return map[curPosition];
+        return map[curPosition].getDescript();
     }
-    private Space moveDown() {
+    private String moveDown() {
         if(curPosition + getWidth() >= getWidth() * getHeight()) invalidMove();
         else curPosition+= getWidth();
-        return map[curPosition];
+        return map[curPosition].getDescript();
     }
     private void invalidMove() {
         System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");

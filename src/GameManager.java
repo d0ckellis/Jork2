@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * A class to store the various methods responsible for game management
  * @author andyh
@@ -7,17 +6,22 @@ import java.util.Scanner;
  * @version 1.1
  */
 public class GameManager {
-    private final Scanner console;
+    private final Scanner console = Jork.CONSOLE;
     private final Map map;
     private final Player player;
     private final Space space;
 
 
-    public GameManager(Scanner console, Map map, Player player, Space space) {
-        this.console = console;
+    public GameManager(Map map, Player player, Space space) {
         this.map = map;
         this.player = player;
         this.space = space;
+    }
+    public GameManager() {
+
+        map = startSetup().gameBuilder();
+        //TODO:insert player builder
+
     }
 
     /**
@@ -43,7 +47,7 @@ public class GameManager {
     }
     public Setup startSetup() {
         Setup setup = new Setup();
-        setup.gameBuilder(console);
+        setup.gameBuilder();
         return setup;
     }
 }
