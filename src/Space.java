@@ -142,8 +142,8 @@ public class Space{
         }
     }
 
-    public String printDescript() {
-        if (!hasItem)  return description;
+    public String getDescript() {
+        if (hasItem)  return description;
         else return descriptHasItem;
     }
 

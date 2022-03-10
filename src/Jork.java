@@ -7,12 +7,9 @@ import java.util.Scanner;
  * @version 1.1
  */
 public class Jork {
-
+    protected static final Scanner CONSOLE = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
         System.out.println("Starting Jork...");
-        Setup setup = new Setup();
-        setup.gameBuilder(console);
-
+        GameManager gameManager = new GameManager();
     }
 }

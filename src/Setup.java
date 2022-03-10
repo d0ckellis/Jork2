@@ -22,15 +22,16 @@ public class Setup {
     /**
      * A builder class for our game
      */
-    public void gameBuilder(Scanner console) {
+    public Map gameBuilder() {
         //build an array of Space objects equal to the chapter
         Space[] spacesChapOne = new Space[9];
         //Space space0 = new Space(false, space0Description, "", Item.NAILS);
         //there has to be a better way to do this
         buildChapterOneSpaces(spacesChapOne);
         //build the map
-        Map chOneMap = new Map.Builder(console, 0, 3, 3, spacesChapOne).build();
+        Map chOneMap = new Map.Builder( 0, 3, 3, spacesChapOne).build();
         chOneMap.move();
+        return chOneMap;
 
         //GameManager gm = new GameManager(console, chOneMap, player, spacesChapOne);
     }
