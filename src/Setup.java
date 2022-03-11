@@ -30,7 +30,6 @@ public class Setup {
         buildChapterOneSpaces(spacesChapOne);
         //build the map
         Map chOneMap = new Map.Builder( 0, 3, 3, spacesChapOne).build();
-        chOneMap.move();
         return chOneMap;
 
         //GameManager gm = new GameManager(console, chOneMap, player, spacesChapOne);

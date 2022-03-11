@@ -5,13 +5,15 @@
  * @version 1.1
  */
 public class Description {
+
+    //TODO: Add boolean for if describing inv item, as well as multiple states of said items, i.e. open, closed, etc
     //test
 
     //we are almost certainly going to need to read these from a file to make this readable.
     //going to sleep on it and see if I can come up with an alt solution
 
 
-    //Item: Nail
+    //Item: Nails
     String descriptSpace0WithNoInvItems =
             "\tYou stub your toe on two nails protruding from the floorboards,\n" +
             "\tDid you do this last night too or is it just deja vu?\n" +

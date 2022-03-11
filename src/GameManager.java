@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 /**
  * A class to store the various methods responsible for game management
  * @author andyh
@@ -6,48 +7,95 @@ import java.util.Scanner;
  * @version 1.1
  */
 public class GameManager {
-    private final Scanner console = Jork.CONSOLE;
-    private final Map map;
-    private final Player player;
-    private final Space space;
+    private static Map map;
+    private Space space;
+    private Player player;
+    private static String verb  = "";
+    private static String noun = "";
+    private static final String MOVE = "move";
+    private static final String TAKE = "take";
+    private static final String USE = "use";
+    private static final String LOOK = "look";
 
 
-    public GameManager(Map map, Player player, Space space) {
-        this.map = map;
-        this.player = player;
-        this.space = space;
+    protected static final Scanner CONSOLE = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        System.out.println("Starting Jork...");
+        Setup setup = new Setup();
+        map = setup.gameBuilder();
+        action();
+
     }
-    public GameManager() {
-
-        map = startSetup().gameBuilder();
-        //TODO:insert player builder
-
-    }
-
     /**
      * Empties the visible {@code Console} after every action
      */
     public static void consoleWipe() {
         System.out.println("Console cleared!");
     }
-    public void action() {
-        String verb;
-        String noun;
-        do{
+    public static void action() {
+        noun = "";
+        verb = "";
+        String answer = "";
+        do {
             System.out.println("\nEnter action:\n> ");
-            verb = console.next();
-            noun = console.next();
-            console.nextLine();
-            switch (verb.toLowerCase()) {
-                case "move":
-
-
+            answer = CONSOLE.nextLine();
+            String[] inputs = answer.split(" ");
+            //TODO:make varied entries for different outcomes, ie array size 1, 3, etc.
+            if (inputs.length != 2) {
+                System.out.print("You must specify only an action and target/direction.");
+                action();
+            } else {
+                verb = inputs[0];
+                noun = inputs[1];
             }
-        } while(true);
+            System.out.println(verb);
+            System.out.println(noun);
+            switch (verb.toLowerCase()) {
+                case MOVE: move();
+                case USE:
+                case TAKE:
+                case LOOK: break;
+                default:
+                    System.out.println("You can't do that.");
+                    action();
+            }
+        } while (true);
     }
-    public Setup startSetup() {
-        Setup setup = new Setup();
-        setup.gameBuilder();
-        return setup;
+    private static void move() {
+        switch(verb.toUpperCase()) {
+            case "NORTH":
+            case "N":
+            case "UP":
+                System.out.println(map.moveUp());
+                break;
+            case "SOUTH":
+            case "S":
+            case "DOWN":
+                System.out.println(map.moveDown());
+                break;
+            case "EAST":
+            case "E":
+            case "RIGHT":
+                System.out.println(map.moveRight());
+                break;
+            case "WEST":
+            case "W":
+            case "LEFT":
+                System.out.println(map.moveLeft());
+                break;
+            default:
+                System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
+                System.out.println("\nWhich direction would you like to move? ");
+                verb = CONSOLE.next();
+                CONSOLE.nextLine();
+                move();
+        }
+    }
+
+    private void invalidMove() {
+        System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
+        move();
     }
 }

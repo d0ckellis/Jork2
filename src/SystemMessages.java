@@ -5,6 +5,8 @@
  * @version 1.1
  */
 public class SystemMessages {
+    //TODO: make all static please
+
     /**
      * Strings used outside the story
      */
