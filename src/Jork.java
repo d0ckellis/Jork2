@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author alexb
  * @version 1.1
  */
-public class GameManager {
+public class Jork {
     private static Map map;
     private Space space;
     private Player player;
@@ -53,7 +53,7 @@ public class GameManager {
             System.out.println(verb);
             System.out.println(noun);
             switch (verb.toLowerCase()) {
-                case MOVE: move();
+                case MOVE: map.move(verb);
                 case USE:
                 case TAKE:
                 case LOOK: break;
@@ -62,40 +62,5 @@ public class GameManager {
                     action();
             }
         } while (true);
-    }
-    private static void move() {
-        switch(verb.toUpperCase()) {
-            case "NORTH":
-            case "N":
-            case "UP":
-                System.out.println(map.moveUp());
-                break;
-            case "SOUTH":
-            case "S":
-            case "DOWN":
-                System.out.println(map.moveDown());
-                break;
-            case "EAST":
-            case "E":
-            case "RIGHT":
-                System.out.println(map.moveRight());
-                break;
-            case "WEST":
-            case "W":
-            case "LEFT":
-                System.out.println(map.moveLeft());
-                break;
-            default:
-                System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
-                System.out.println("\nWhich direction would you like to move? ");
-                verb = CONSOLE.next();
-                CONSOLE.nextLine();
-                move();
-        }
-    }
-
-    private void invalidMove() {
-        System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
-        move();
     }
 }

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.awt.desktop.UserSessionEvent.Reason.CONSOLE;
+
 /**
  * A class for mapBuilder and using the Map object. Home for move().
  * @author alexb
@@ -41,7 +43,7 @@ public class Map {
         Space[] map;
 
         public Builder (int startPosition, int width, int height, Space[] map) {
-            this.console = GameManager.CONSOLE;
+            this.console = Jork.CONSOLE;
             this.startPosition = startPosition;
             this.width = width;
             this.height = height;
@@ -51,26 +53,57 @@ public class Map {
             return new Map(this);
         }
     }
-
-    public String moveRight() {
-        if (currentPos + 1 % getWidth() == 0) return "invalid";
+    public void move(String verb) {
+        switch(verb.toUpperCase()) {
+            case "NORTH":
+            case "N":
+            case "UP":
+                System.out.println(moveUp(verb));
+                break;
+            case "SOUTH":
+            case "S":
+            case "DOWN":
+                System.out.println(moveDown(verb));
+                break;
+            case "EAST":
+            case "E":
+            case "RIGHT":
+                System.out.println(moveRight(verb));
+                break;
+            case "WEST":
+            case "W":
+            case "LEFT":
+                System.out.println(moveLeft(verb));
+                break;
+            default:
+                System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
+                System.out.println("\nWhich direction would you like to move? ");
+                verb = Jork.CONSOLE.next();
+                Jork.CONSOLE.nextLine();
+                move(verb);
+        }
+    }
+    private String moveRight(String verb) {
+        if (currentPos + 1 % getWidth() == 0) invalidMove(verb);
         else currentPos++;
         return map[currentPos].getDescript();
     }
-    public String moveLeft() {
-        if(currentPos % getWidth() == 0) return "invalid";
+    private String moveLeft(String verb) {
+        if(currentPos % getWidth() == 0) invalidMove(verb);
         else currentPos--;
         return map[currentPos].getDescript();
     }
-    public String moveUp() {
-        if(currentPos - getWidth() < 0) return "invalid";
+    private String moveUp(String verb) {
+        if(currentPos - getWidth() < 0) invalidMove(verb);
         else currentPos -= getWidth();
         return map[currentPos].getDescript();
     }
-    public String moveDown() {
-        if(currentPos + getWidth() >= getWidth() * getHeight()) return "invalid";
+    private String moveDown(String verb) {
+        if(currentPos + getWidth() >= getWidth() * getHeight()) invalidMove(verb);
         else currentPos += getWidth();
         return map[currentPos].getDescript();
     }
-
+    private void invalidMove(String verb) {
+        System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
+    }
 }
