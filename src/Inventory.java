@@ -14,4 +14,8 @@ public class Inventory {
     public void remove(Item item) {
         inventory.remove(item);
     }
+
+    public String addedItem(Item item) {
+        String added = "";
+        return added = "You added" + item + "to your inventory.";}
 }

@@ -41,7 +41,9 @@ public enum Item {
     /**
      * Necklace
      */
-    NECKLACE("NECKLACE");
+    NECKLACE("NECKLACE"),
+
+    EMPTY("EMPTY");
 
 
 

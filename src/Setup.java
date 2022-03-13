@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * A class for our {@link Setup#gameBuilder}
  * @author andyh
@@ -22,16 +24,12 @@ public class Setup {
      * A builder class for our game
      */
     public Map gameBuilder() {
-        //build an array of Space objects equal to the chapter
         Space[] spacesChapOne = new Space[9];
-        //Space space0 = new Space(false, space0Description, "", Item.NAILS);
-        //there has to be a better way to do this
+        Inventory inventory = new Inventory();
         buildChapterOneSpaces(spacesChapOne);
-        //build the map
         Map chOneMap = new Map.Builder( 0, 3, 3, spacesChapOne).build();
+        System.out.println(spacesChapOne[chOneMap.getCurrentPos()].item);
         return chOneMap;
-
-        //GameManager gm = new GameManager(console, chOneMap, player, spacesChapOne);
     }
 
     public Space[] buildChapterOneSpaces(Space[] spaces) {

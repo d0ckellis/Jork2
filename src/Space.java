@@ -17,7 +17,7 @@ public class Space{
     private final String descriptThirdNonInventoryItem;
     private final String descriptUsingItem;
     private final String descripteUsingSecondItem;
-    private final Item item;
+    public final Item item;
 
     private Space(Builder builder) {
         this.description = builder.description;
@@ -145,10 +145,12 @@ public class Space{
     }
 
     //placeholder for take method
-    /*public String take() {
-        String string = "";
-        return string;
-
+    public Item take(String noun) {
+        if(noun.equals(item.name()))
+        return item;
+        else return Item.EMPTY;
+    }
+/*
     }
     //placeholder for use method
     public String use() {

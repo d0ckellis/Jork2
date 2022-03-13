@@ -8,8 +8,10 @@ import java.util.Scanner;
  */
 public class Jork {
     private static Map map;
-    private Space space;
-    private Player player;
+    private static Space space;
+    private static Player player;
+    private static Inventory inventory;
+    private static Space[] spaces;
     private static String verb  = "";
     private static String noun = "";
     private static final String MOVE = "move";
@@ -27,11 +29,12 @@ public class Jork {
         map = setup.gameBuilder();
         action();
 
+
     }
     /**
      * Empties the visible {@code Console} after every action
      */
-    public static void consoleWipe() {
+    public void consoleWipe() {
         System.out.println("Console cleared!");
     }
     public static void action() {
@@ -54,9 +57,13 @@ public class Jork {
             System.out.println(noun);
             switch (noun.toLowerCase()) {
                 case MOVE: map.move(verb);
+                    break;
                 case USE:
-                case TAKE:
-                case LOOK: break;
+                    break;
+                case TAKE: inventory.add(space.take(noun));
+                    break;
+                case LOOK:
+                    break;
                 default:
                     System.out.println("You can't do that.");
                     action();
