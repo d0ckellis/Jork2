@@ -1,4 +1,3 @@
-import java.util.Scanner;
 /**
  * A class for our {@link Setup#gameBuilder}
  * @author andyh
@@ -38,47 +37,38 @@ public class Setup {
     public Space[] buildChapterOneSpaces(Space[] spaces) {
         Description chapterOne = new Description();
 
-        spaces[0] = new Space.Builder(false, chapterOne.getDescriptSpace0WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace0WithInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace0NonInvItem1())
-                        .descriptSecondNonInventoryItem(chapterOne.getDescriptSpace0NonInvItem2())
+        spaces[0] = new Space.Builder(chapterOne.getDescribe_0_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_0_No_Item())
                         .item(Item.NAILS)
                         .build();
-        spaces[1] = new Space.Builder(false, chapterOne.getDescriptSpace1WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace1WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace1NonInvItem1())
+        spaces[1] = new Space.Builder( chapterOne.getDescribe_1_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_1_No_Item())
                         .item(Item.SWORD)
                         .build();
-        spaces[2] = new Space.Builder(false, chapterOne.getDescriptSpace2WithNoInvItems())
+        spaces[2] = new Space.Builder( chapterOne.getDescribe_2_No_Item())
                         .build();
-        spaces[3] = new Space.Builder(false, chapterOne.getDescriptSpace3WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace3WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace3NonInvItem1())
+        spaces[3] = new Space.Builder(chapterOne.getDescribe_3_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_3_No_Item())
                         .item(Item.MARKER)
                         .build();
-        spaces[4] = new Space.Builder(false, chapterOne.getDescriptSpace4WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace4WithoutInvItem1())
+        spaces[4] = new Space.Builder(chapterOne.getDescribe_4_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_4_Open_Trapdoor())
                         .item(Item.RUG)
                         .build();
-        spaces[5] = new Space.Builder(false, chapterOne.getDescriptSpace5WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace5WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace5NonInvItem1())
+        spaces[5] = new Space.Builder(chapterOne.getDescribe_5_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_5_No_Item())
                         .item(Item.POTION)
                         .build();
-        spaces[6] = new Space.Builder(false, chapterOne.getDescriptSpace6WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace6WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace6NonInvItem1())
+        spaces[6] = new Space.Builder(chapterOne.getDescribe_6_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_6_No_Item())
                         .item(Item.PARCHMENT)
                         .build();
-        spaces[7] = new Space.Builder(false, chapterOne.getDescriptSpace7WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace7WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace7NonInvItem1())
+        spaces[7] = new Space.Builder(chapterOne.getDescribe_7_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_7_No_Item())
                         .item(Item.KEY)
                         .build();
-        spaces[8] = new Space.Builder(false, chapterOne.getDescriptSpace8WithNoInvItems())
-                        .descriptHasItem(chapterOne.getDescriptSpace8WithoutInvItem1())
-                        .descriptNonInventoryItem(chapterOne.getDescriptSpace8NonInvItem1())
-                        .descriptSecondNonInventoryItem(chapterOne.getDescriptSpace8NonInvItem2())
+        spaces[8] = new Space.Builder(chapterOne.getDescribe_8_With_Item())
+                        .descriptHasItem(chapterOne.getDescribe_8_No_Item())
                         .item(Item.CLOAK)
                         .build();
         return spaces;

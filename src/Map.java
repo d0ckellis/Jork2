@@ -83,27 +83,32 @@ public class Map {
                 move(verb);
         }
     }
+    //TODO: Fix bug in move right expression. It isnt preventing teleporting as it should, and allows arrayindexoutofbounds exception
     private String moveRight(String verb) {
-        if (currentPos + 1 % getWidth() == 0) invalidMove(verb);
+        if (currentPos + 1 % getWidth() == 0) return invalidMove(verb);
         else currentPos++;
+        System.out.println(currentPos);
         return map[currentPos].getDescript();
     }
     private String moveLeft(String verb) {
-        if(currentPos % getWidth() == 0) invalidMove(verb);
+        if(currentPos % getWidth() == 0) return invalidMove(verb);
         else currentPos--;
+        System.out.println(currentPos);
         return map[currentPos].getDescript();
     }
     private String moveUp(String verb) {
-        if(currentPos - getWidth() < 0) invalidMove(verb);
+        if(currentPos - getWidth() < 0) return invalidMove(verb);
         else currentPos -= getWidth();
+        System.out.println(currentPos);
         return map[currentPos].getDescript();
     }
     private String moveDown(String verb) {
-        if(currentPos + getWidth() >= getWidth() * getHeight()) invalidMove(verb);
+        if(currentPos + getWidth() >= getWidth() * getHeight()) return invalidMove(verb);
         else currentPos += getWidth();
+        System.out.println(currentPos);
         return map[currentPos].getDescript();
     }
-    private void invalidMove(String verb) {
-        System.out.println("\tYou run headfirst into the wall.\n\tTry Again.");
+    private String invalidMove(String verb) {
+        return "\tYou run headfirst into the wall.\n\tTry Again.";
     }
 }

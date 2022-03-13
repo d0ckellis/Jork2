@@ -47,12 +47,12 @@ public class Jork {
                 System.out.print("You must specify only an action and target/direction.");
                 action();
             } else {
-                verb = inputs[0];
-                noun = inputs[1];
+                noun = inputs[0];
+                verb = inputs[1];
             }
             System.out.println(verb);
             System.out.println(noun);
-            switch (verb.toLowerCase()) {
+            switch (noun.toLowerCase()) {
                 case MOVE: map.move(verb);
                 case USE:
                 case TAKE:

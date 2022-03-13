@@ -5,7 +5,7 @@
  * @version 1.2
  */
 public class Space{
-    private boolean hasItem;
+    private boolean hasItem = false;
     private final String description;
     private final String descriptHasItem;
     private final String descriptNoSecondItem;
@@ -20,7 +20,6 @@ public class Space{
     private final Item item;
 
     private Space(Builder builder) {
-        this.hasItem = builder.hasItem;
         this.description = builder.description;
         this.descriptHasItem = builder.descriptHasItem;
         this.descriptNoSecondItem = builder.descriptNoSecondItem;
@@ -64,7 +63,6 @@ public class Space{
     public Item getItem() {return item;}
 
     public static class Builder {
-        private final boolean hasItem;
         private final String description;
         private String descriptHasItem;
         private String descriptNoSecondItem;
@@ -78,8 +76,7 @@ public class Space{
         private String descriptUsingSecondItem;
         private Item item;
 
-        public Builder(Boolean hasItem, String description) {
-            this.hasItem = hasItem;
+        public Builder(String description) {
             this.description = description;
         }
 
@@ -143,7 +140,7 @@ public class Space{
     }
 
     public String getDescript() {
-        if (hasItem)  return description;
+        if (!hasItem)  return description;
         else return descriptHasItem;
     }
 
