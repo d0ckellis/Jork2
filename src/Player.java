@@ -1,18 +1,23 @@
 import java.util.Scanner;
 
+/**
+ * A class for storing Player info and for building the player object.
+ * @author alexb
+ * @version 1.2
+ */
 public class Player {
-    private final Scanner console;
     public String name;
     public int strength;
     public int intelligence;
     public int agility;
+    public Inventory inventory;
 
     private Player(Builder builder) {
-        this.console = builder.console;
         this.name = builder.name;
         this.strength = builder.strength;
         this.intelligence = builder.intelligence;
         this.agility = builder.agility;
+        this.inventory = builder.inventory;
     }
 
     //creating getter and setter for name and power of player
@@ -46,21 +51,23 @@ public class Player {
         return agility;
     }
 
-    private Inventory inventory;
 
     public static class Builder {
-        private final Scanner console;
         public String name;
         public int strength;
         public int intelligence;
         public int agility;
+        public Inventory inventory;
 
-        public Builder(Scanner console, String name, int strength, int intelligence, int agility) {
-            this.console = console;
+        public Builder(String name, int strength, int intelligence, int agility, Inventory inventory) {
             this.name = name;
             this.strength = strength;
             this.intelligence = intelligence;
             this.agility = agility;
+            this.inventory = inventory;
+        }
+        public Player build() {
+            return new Player(this);
         }
     }
 

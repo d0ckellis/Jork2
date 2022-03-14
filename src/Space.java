@@ -4,7 +4,6 @@
  * @author alexl
  * @version 1.2
  */
-
 public class Space{
     private boolean hasItem = true;
     private final String describe_Space_With_Item;
@@ -13,7 +12,7 @@ public class Space{
     public final Item nonInvItem;
 
 
-    private Space(Builder builder) {
+    public Space(Builder builder) {
         this.describe_Space_With_Item = builder.describe_Space_With_Item;
         this.describe_Space_Without_Item = builder.describe_Space_Without_Item;
         this.item = builder.item;
@@ -61,9 +60,9 @@ public class Space{
         }
     }
 
-    public String getDescript() {
+    public String getSpaceDescription() {
         if (hasItem)  {return describe_Space_With_Item;}
-        else {return describe_Space_With_Item;}
+        else {return describe_Space_Without_Item;}
     }
 
     public Item take(String noun) {

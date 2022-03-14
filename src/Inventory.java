@@ -1,5 +1,11 @@
 import java.util.HashMap;
 
+/**
+ * A unique {@code HashMap} with its own behavior used to store {@link Item}s within.
+ * @author jaspersn
+ * @author alexb
+ * @version 1.3
+ */
 public class Inventory {
     HashMap<Item, Boolean> inventory = new HashMap<>();
 
