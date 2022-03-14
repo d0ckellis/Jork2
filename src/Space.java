@@ -4,34 +4,18 @@
  * @author alexl
  * @version 1.2
  */
+
 public class Space{
     private boolean hasItem = true;
-    private final String description;
-    private final String descriptHasItem;
-    private final String descriptNoSecondItem;
-    private final String descriptHasSecondItem;
-    private final String descriptNoThirdItem;
-    private final String descriptHasThirdItem;
-    private final String descriptNonInventoryItem;
-    private final String descriptSecondNonInventoryItem;
-    private final String descriptThirdNonInventoryItem;
-    private final String descriptUsingItem;
-    private final String descripteUsingSecondItem;
+    private final String describe_Space_With_Item;
+    private final String describe_Space_Without_Item;
     public final Item item;
     public final Item nonInvItem;
 
+
     private Space(Builder builder) {
-        this.description = builder.description;
-        this.descriptHasItem = builder.descriptHasItem;
-        this.descriptNoSecondItem = builder.descriptNoSecondItem;
-        this.descriptHasSecondItem = builder.descriptHasSecondItem;
-        this.descriptNoThirdItem = builder.descriptNoThirdItem;
-        this.descriptHasThirdItem = builder.descriptHasThirdItem;
-        this.descriptNonInventoryItem = builder.descriptNonInventoryItem;
-        this.descriptSecondNonInventoryItem = builder.descriptSecondNonInventoryItem;
-        this.descriptThirdNonInventoryItem = builder.descriptThirdNonInventoryItem;
-        this.descriptUsingItem = builder.descriptUsingItem;
-        this.descripteUsingSecondItem = builder.descriptUsingSecondItem;
+        this.describe_Space_With_Item = builder.describe_Space_With_Item;
+        this.describe_Space_Without_Item = builder.describe_Space_Without_Item;
         this.item = builder.item;
         this.nonInvItem = builder.nonInvItem;
     }
@@ -40,98 +24,27 @@ public class Space{
 
     public void setHasItem() {hasItem = !hasItem;}
 
-    public String getDescription() {return description;}
+    public String getDescribe_Space_With_Item() {return describe_Space_With_Item;}
 
-    public String getDescriptHasItem() {return descriptHasItem;}
-
-    public String getDescriptNoSecondItem() {return descriptNoSecondItem;}
-
-    public String getDescriptHasSecondItem() {return descriptHasSecondItem;}
-
-    public String getDescriptNoThirdItem() {return descriptNoThirdItem;}
-
-    public String getDescriptHasThirdItem() {return descriptHasThirdItem;}
-
-    public String getDescriptNonInventoryItem() {return descriptNonInventoryItem;}
-
-    public String getDescriptSecondNonInventoryItem() {return descriptSecondNonInventoryItem;}
-
-    public String getDescriptThirdNonInventoryItem() {return descriptThirdNonInventoryItem;}
-
-    public String getDescriptUsingItem() {return descriptUsingItem;}
-
-    public String getDescripteUsingSecondItem() {return descripteUsingSecondItem;}
+    public String getDescribe_Space_Without_Item() {return describe_Space_Without_Item;}
 
     public Item getItem() {return item;}
 
     public Item getNonInvItem() {return nonInvItem;}
 
     public static class Builder {
-        private final String description;
-        private String descriptHasItem;
-        private String descriptNoSecondItem;
-        private String descriptHasSecondItem;
-        private String descriptNoThirdItem;
-        private String descriptHasThirdItem;
-        private String descriptNonInventoryItem;
-        private String descriptSecondNonInventoryItem;
-        private String descriptThirdNonInventoryItem;
-        private String descriptUsingItem;
-        private String descriptUsingSecondItem;
+        private final String describe_Space_With_Item;
+        private String describe_Space_Without_Item;
         private Item item;
         private Item nonInvItem;
 
-        public Builder(String description) {
-            this.description = description;
+        public Builder(String describe_Space_With_Item) {
+            this.describe_Space_With_Item = describe_Space_With_Item;
+
         }
 
-        public Builder descriptHasItem(String descriptHasItem) {
-            this.descriptHasItem = descriptHasItem;
-            return this;
-        }
-
-        public Builder descriptNoSecondItem(String descriptNoSecondItem) {
-            this.descriptNoSecondItem = descriptNoSecondItem;
-            return this;
-        }
-
-        public Builder descriptHasSecondItem(String descriptHasSecondItem) {
-            this.descriptHasSecondItem = descriptHasSecondItem;
-            return this;
-        }
-
-        public Builder descriptNoThirdItem(String descriptNoThirdItem) {
-            this.descriptNoThirdItem = descriptNoThirdItem;
-            return this;
-        }
-
-        public Builder descriptHasThirdItem(String descriptHasThirdItem) {
-            this.descriptHasThirdItem = descriptHasThirdItem;
-            return this;
-        }
-
-        public Builder descriptNonInventoryItem(String descriptNonInventoryItem) {
-            this.descriptNonInventoryItem = descriptNonInventoryItem;
-            return this;
-        }
-
-        public Builder descriptSecondNonInventoryItem(String descriptSecondNonInventoryItem) {
-            this.descriptSecondNonInventoryItem = descriptSecondNonInventoryItem;
-            return this;
-        }
-
-        public Builder descriptThirdNonInventoryItem(String descriptThirdNonInventoryItem) {
-            this.descriptThirdNonInventoryItem = descriptThirdNonInventoryItem;
-            return this;
-        }
-
-        public Builder descriptUsingItem(String descriptUsingItem) {
-            this.descriptUsingItem = descriptUsingItem;
-            return this;
-        }
-
-        public Builder descriptUsingSecondItem(String descriptUsingSecondItem) {
-            this.descriptUsingSecondItem = descriptUsingSecondItem;
+        public Builder Describe_Space_Without_Item(String describe_Space_Without_Item) {
+            this.describe_Space_Without_Item = describe_Space_Without_Item;
             return this;
         }
 
@@ -149,8 +62,8 @@ public class Space{
     }
 
     public String getDescript() {
-        if (hasItem)  {return description;}
-        else {return descriptHasItem;}
+        if (hasItem)  {return describe_Space_With_Item;}
+        else {return describe_Space_With_Item;}
     }
 
     public Item take(String noun) {
