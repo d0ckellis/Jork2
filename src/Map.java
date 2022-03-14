@@ -13,14 +13,14 @@ public class Map {
     private final int width;
     private final int height;
     private int currentPos;
-    Space[] map;
+    Space[] spaces;
 
     private Map(Builder builder) {
         this.console = builder.console;
         this.startPosition = builder.startPosition;
         this.width = builder.width;
         this.height = builder.height;
-        this.map = builder.map;
+        this.spaces = builder.map;
     }
 
     public int getStartPosition() {return startPosition;}
@@ -31,9 +31,9 @@ public class Map {
 
     public int getCurrentPos() {return currentPos;}
 
-    public Space getSpace(int position) {return map[position];}
+    public Space getSpace(int position) {return spaces[position];}
 
-    public Space getCurrentSpace() {return map[currentPos];}
+    public Space getCurrentSpace() {return spaces[currentPos];}
 
     public static class Builder {
         private final Scanner console;
@@ -53,12 +53,13 @@ public class Map {
             return new Map(this);
         }
     }
-    public void move(String verb) {
+    public Space move(String verb) {
         switch(verb.toUpperCase()) {
             case "NORTH":
             case "N":
             case "UP":
                 System.out.println(moveUp(verb));
+
                 break;
             case "SOUTH":
             case "S":
@@ -82,31 +83,32 @@ public class Map {
                 Jork.CONSOLE.nextLine();
                 move(verb);
         }
+        return spaces[getCurrentPos()];
     }
     //TODO: Fix bug in move right expression. It isnt preventing teleporting as it should, and allows arrayindexoutofbounds exception
     private String moveRight(String verb) {
         if (currentPos + 1 % getWidth() == 0) return invalidMove(verb);
         else currentPos++;
         System.out.println(currentPos);
-        return map[currentPos].getDescript();
+        return spaces[currentPos].getDescript();
     }
     private String moveLeft(String verb) {
         if(currentPos % getWidth() == 0) return invalidMove(verb);
         else currentPos--;
         System.out.println(currentPos);
-        return map[currentPos].getDescript();
+        return spaces[currentPos].getDescript();
     }
     private String moveUp(String verb) {
         if(currentPos - getWidth() < 0) return invalidMove(verb);
         else currentPos -= getWidth();
         System.out.println(currentPos);
-        return map[currentPos].getDescript();
+        return spaces[currentPos].getDescript();
     }
     private String moveDown(String verb) {
         if(currentPos + getWidth() >= getWidth() * getHeight()) return invalidMove(verb);
         else currentPos += getWidth();
         System.out.println(currentPos);
-        return map[currentPos].getDescript();
+        return spaces[currentPos].getDescript();
     }
     private String invalidMove(String verb) {
         return "\tYou run headfirst into the wall.\n\tTry Again.";

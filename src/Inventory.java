@@ -8,7 +8,13 @@ public class Inventory {
     }
 
     public void add(Item item) {
-        inventory.put(item, true);
+        if(item != Item.EMPTY) {
+            inventory.put(item, true);
+            item.setItemInInventory();
+            System.out.println(addedItem(item));
+        } else {
+            System.out.println("You don't want that.");
+        }
     }
 
     public void remove(Item item) {
@@ -17,5 +23,13 @@ public class Inventory {
 
     public String addedItem(Item item) {
         String added = "";
-        return added = "You added" + item + "to your inventory.";}
+        return added = "You added " + item + " to your inventory.";
+    }
+
+    public void printInventory() {
+        System.out.println("Your inventory contains: " + inventory.keySet());
+
+    }
+
 }
+

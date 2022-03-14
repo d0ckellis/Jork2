@@ -25,7 +25,6 @@ public class Setup {
      */
     public Map gameBuilder() {
         Space[] spacesChapOne = new Space[9];
-        Inventory inventory = new Inventory();
         buildChapterOneSpaces(spacesChapOne);
         Map chOneMap = new Map.Builder( 0, 3, 3, spacesChapOne).build();
         System.out.println(spacesChapOne[chOneMap.getCurrentPos()].item);
@@ -37,36 +36,45 @@ public class Setup {
 
         spaces[0] = new Space.Builder(chapterOne.getDescribe_0_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_0_No_Item())
+                        .nonInvItem(Item.BED)
                         .item(Item.NAILS)
                         .build();
         spaces[1] = new Space.Builder( chapterOne.getDescribe_1_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_1_No_Item())
+                        .nonInvItem(Item.NIGHTSTAND)
                         .item(Item.SWORD)
                         .build();
         spaces[2] = new Space.Builder( chapterOne.getDescribe_2_No_Item())
+                        .nonInvItem(Item.WINDOW)
                         .build();
         spaces[3] = new Space.Builder(chapterOne.getDescribe_3_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_3_No_Item())
+                        .nonInvItem(Item.BOOKSHELF)
                         .item(Item.MARKER)
                         .build();
         spaces[4] = new Space.Builder(chapterOne.getDescribe_4_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_4_Open_Trapdoor())
+                        .nonInvItem(Item.TRAPDOOR)
                         .item(Item.RUG)
                         .build();
         spaces[5] = new Space.Builder(chapterOne.getDescribe_5_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_5_No_Item())
+                        .nonInvItem(Item.DESK)
                         .item(Item.POTION)
                         .build();
         spaces[6] = new Space.Builder(chapterOne.getDescribe_6_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_6_No_Item())
+                        .nonInvItem(Item.BOOKSHELF)
                         .item(Item.PARCHMENT)
                         .build();
         spaces[7] = new Space.Builder(chapterOne.getDescribe_7_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_7_No_Item())
+                        .nonInvItem(Item.DOOR)
                         .item(Item.KEY)
                         .build();
         spaces[8] = new Space.Builder(chapterOne.getDescribe_8_With_Item())
                         .descriptHasItem(chapterOne.getDescribe_8_No_Item())
+                        .nonInvItem(Item.LATRINE)
                         .item(Item.CLOAK)
                         .build();
         return spaces;

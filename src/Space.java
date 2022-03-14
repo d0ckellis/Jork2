@@ -5,7 +5,7 @@
  * @version 1.2
  */
 public class Space{
-    private boolean hasItem = false;
+    private boolean hasItem = true;
     private final String description;
     private final String descriptHasItem;
     private final String descriptNoSecondItem;
@@ -18,6 +18,7 @@ public class Space{
     private final String descriptUsingItem;
     private final String descripteUsingSecondItem;
     public final Item item;
+    public final Item nonInvItem;
 
     private Space(Builder builder) {
         this.description = builder.description;
@@ -32,6 +33,7 @@ public class Space{
         this.descriptUsingItem = builder.descriptUsingItem;
         this.descripteUsingSecondItem = builder.descriptUsingSecondItem;
         this.item = builder.item;
+        this.nonInvItem = builder.nonInvItem;
     }
 
     public boolean getHasItem() {return hasItem;}
@@ -62,6 +64,8 @@ public class Space{
 
     public Item getItem() {return item;}
 
+    public Item getNonInvItem() {return nonInvItem;}
+
     public static class Builder {
         private final String description;
         private String descriptHasItem;
@@ -75,6 +79,7 @@ public class Space{
         private String descriptUsingItem;
         private String descriptUsingSecondItem;
         private Item item;
+        private Item nonInvItem;
 
         public Builder(String description) {
             this.description = description;
@@ -134,34 +139,41 @@ public class Space{
             this.item = item;
             return this;
         }
+        public Builder nonInvItem(Item nonInvItem) {
+            this.nonInvItem = nonInvItem;
+            return this;
+        }
         public Space build() {
             return new Space(this);
         }
     }
 
     public String getDescript() {
-        if (!hasItem)  return description;
-        else return descriptHasItem;
+        if (hasItem)  {return description;}
+        else {return descriptHasItem;}
     }
 
-    //placeholder for take method
     public Item take(String noun) {
-        if(noun.equals(item.name()))
-        return item;
-        else return Item.EMPTY;
+        if (noun.toUpperCase().equals(item.name()) && hasItem) {
+            hasItem = false;
+            return item;
+        } else {
+            return Item.EMPTY;
+        }
     }
-/*
+    public String look(String noun) {
+        if (noun.toUpperCase().equals(item.name())) {
+            return item.getValidDescription();
+        } else if (noun.toUpperCase().equals(nonInvItem.name())) {
+            return nonInvItem.getValidDescription();
+        } else return "\tNot much more to that.";
     }
+    /*
     //placeholder for use method
     public String use() {
         String string = "";
         return string;
     }
+*/
 
-    //placeholder for look method
-    public String look() {
-        String string = "";
-        return string;
-    }
-    */
 }

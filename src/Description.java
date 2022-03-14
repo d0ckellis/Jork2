@@ -5,7 +5,7 @@
  * @version 1.1
  */
 public class Description {
-
+    //TODO: Make class an @Enum instead.
     //TODO: Add boolean for if describing inv item, as well as multiple states of said items, i.e. open, closed, etc
 
     //we are almost certainly going to need to read these from a file to make this readable.
