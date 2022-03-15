@@ -30,13 +30,11 @@ public class Inventory {
     }
 
     public String addedItem(Item item) {
-        String added = "";
-        return added = "You added " + item + " to your inventory.";
+        return "You added " + item + " to your inventory.";
     }
 
     public void printInventory() {
         System.out.println("Your inventory contains: " + inventory.keySet());
-
     }
 
 }

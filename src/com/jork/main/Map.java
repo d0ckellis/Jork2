@@ -54,23 +54,23 @@ public class Map {
             case "NORTH":
             case "N":
             case "UP":
-                System.out.println(moveUp(verb));
+                System.out.println(moveUp());
 
                 break;
             case "SOUTH":
             case "S":
             case "DOWN":
-                System.out.println(moveDown(verb));
+                System.out.println(moveDown());
                 break;
             case "EAST":
             case "E":
             case "RIGHT":
-                System.out.println(moveRight(verb));
+                System.out.println(moveRight());
                 break;
             case "WEST":
             case "W":
             case "LEFT":
-                System.out.println(moveLeft(verb));
+                System.out.println(moveLeft());
                 break;
             default:
                 System.out.println("\tYou confuse yourself and wander in a circle.\n\tTry again. ");
@@ -82,31 +82,31 @@ public class Map {
         return spaces[getCurrentPos()];
     }
     //TODO: Fix bug in move right expression. It isn't preventing teleporting as it should, and allows arrayindexoutofbounds exception
-    private String moveRight(String verb) {
-        if (currentPos + 1 % getWidth() == 0) return invalidMove(verb);
+    private String moveRight() {
+        if (currentPos + 1 % getWidth() == 0) return invalidMove();
         else currentPos++;
         System.out.println(currentPos);
         return spaces[currentPos].getSpaceDescription();
     }
-    private String moveLeft(String verb) {
-        if(currentPos % getWidth() == 0) return invalidMove(verb);
+    private String moveLeft() {
+        if(currentPos % getWidth() == 0) return invalidMove();
         else currentPos--;
         System.out.println(currentPos);
         return spaces[currentPos].getSpaceDescription();
     }
-    private String moveUp(String verb) {
-        if(currentPos - getWidth() < 0) return invalidMove(verb);
+    private String moveUp() {
+        if(currentPos - getWidth() < 0) return invalidMove();
         else currentPos -= getWidth();
         System.out.println(currentPos);
         return spaces[currentPos].getSpaceDescription();
     }
-    private String moveDown(String verb) {
-        if(currentPos + getWidth() >= getWidth() * getHeight()) return invalidMove(verb);
+    private String moveDown() {
+        if(currentPos + getWidth() >= getWidth() * getHeight()) return invalidMove();
         else currentPos += getWidth();
         System.out.println(currentPos);
         return spaces[currentPos].getSpaceDescription();
     }
-    private String invalidMove(String verb) {
+    private String invalidMove() {
         return "\tYou run headfirst into the wall.\n\tTry Again.";
     }
 }
