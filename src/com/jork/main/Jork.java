@@ -4,6 +4,7 @@ import com.jork.items.Inventory;
 import com.jork.model.SystemMessages;
 import com.jork.space.Space;
 
+import java.io.IOException;
 import java.util.Scanner;
 /**
  * A class to store the various methods responsible for game management
@@ -39,8 +40,16 @@ public class Jork {
     }
     /**
      * Empties the visible {@code Console} after every action
+     * Must change command depending on os system
      */
-    public void consoleWipe() {
+    public void consoleWipe() throws IOException, InterruptedException {
+        /**
+         * Windows code:
+         * Linux code: reset
+         * Mac code:
+         */
+        new ProcessBuilder("reset").inheritIO().start().waitFor();
+
         System.out.println("Console cleared!");
     }
 
