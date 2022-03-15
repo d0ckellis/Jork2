@@ -1,5 +1,7 @@
 package com.jork.space;
 import com.jork.items.Item;
+import com.jork.main.Jork;
+
 /**
  * com.jork.space.Space class for creation of space objects which make up the com.jork.main.Map array, and consist of the game spaces.
  * Inspired by Joshua Blochs builder design pattern @blogs.oracle.com/javamagazine/post/exploring-joshua-blochs-builder-design-pattern-in-java
@@ -82,12 +84,16 @@ public class Space{
             return nonInvItem.getValidDescription();
         } else return "\tNot much more to that.";
     }
-    /*
     //placeholder for use method
     public String use() {
         String string = "";
         return string;
     }
-*/
-
+    public Boolean yesOrNo() {
+        String answer = Jork.CONSOLE.next();
+        Jork.CONSOLE.nextLine();
+        if (answer.charAt(0) == 'y' || answer.charAt(0) == 'Y') {
+            return true;
+        } else return false;
+    }
 }
