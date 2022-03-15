@@ -23,7 +23,7 @@ public class Jork {
     private static final String USE = "use";
     private static final String LOOK = "look";
     private static final String CHECK = "check";
-    protected static final Scanner CONSOLE = new Scanner(System.in);
+    public static final Scanner CONSOLE = new Scanner(System.in);
 /**
  * Constructor for com.jork.main.Jork
  */
