@@ -43,12 +43,16 @@ public class Jork {
      * Must change command depending on os system
      */
     public void consoleWipe() throws IOException, InterruptedException {
-        /**
-         * Windows code:
-         * Linux code: reset
-         * Mac code:
-         */
-        new ProcessBuilder("reset").inheritIO().start().waitFor();
+        String systemName = System.getProperty("os.name");
+        // Windows code: cls
+        // Linux code: reset
+        // Mac code:
+        if(systemName.equals("Linux")) {
+            new ProcessBuilder("reset").inheritIO().start().waitFor();
+        } else if (systemName.equals("Windows")) {
+            new ProcessBuilder("cls").inheritIO().start().waitFor();
+        }
+        //new ProcessBuilder("reset").inheritIO().start().waitFor();
 
         System.out.println("Console cleared!");
     }
