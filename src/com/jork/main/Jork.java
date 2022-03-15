@@ -1,3 +1,9 @@
+package com.jork.main;
+
+import com.jork.items.Inventory;
+import com.jork.model.SystemMessages;
+import com.jork.space.Space;
+
 import java.util.Scanner;
 /**
  * A class to store the various methods responsible for game management
@@ -18,7 +24,7 @@ public class Jork {
     private static final String CHECK = "check";
     protected static final Scanner CONSOLE = new Scanner(System.in);
 /**
- * Constructor for Jork
+ * Constructor for com.jork.main.Jork
  */
     public Jork() {
     }
@@ -27,7 +33,7 @@ public class Jork {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Starting Jork...");
+        System.out.println("Starting com.jork.main.Jork...");
         Jork jork = new Jork();
         jork.jorkRun();
     }

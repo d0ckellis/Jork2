@@ -1,7 +1,9 @@
-import java.util.Scanner;
+package com.jork.main;
+
+import com.jork.items.Inventory;
 
 /**
- * A class for storing Player info and for building the player object.
+ * A class for storing com.jork.main.Player info and for building the player object.
  * @author alexb
  * @version 1.2
  */

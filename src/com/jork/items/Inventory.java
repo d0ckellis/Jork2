@@ -1,3 +1,5 @@
+package com.jork.items;
+
 import java.util.HashMap;
 
 /**

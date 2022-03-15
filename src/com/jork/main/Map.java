@@ -1,9 +1,9 @@
-import java.util.Scanner;
+package com.jork.main;
 
-import static java.awt.desktop.UserSessionEvent.Reason.CONSOLE;
+import com.jork.space.Space;
 
 /**
- * A class for mapBuilder and using the Map object. Home for move().
+ * A class for mapBuilder and using the com.jork.main.Map object. Home for move().
  * @author alexb
  * @version 1.2
  */

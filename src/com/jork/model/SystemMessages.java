@@ -1,3 +1,5 @@
+package com.jork.model;
+
 /**
  * A collection to hold all string objects used in game.
  * @author andyh
@@ -20,7 +22,7 @@ public class SystemMessages {
             "▀▀▀▀▀▀               ███    ███   ▀        \n" +
             "                \n" +
             "       created by Alex Black, Andy Han, Anh Ngoc Vu, and Trevor Parker\n\n";
-    public static final String welcomePlayer = ", welcome  to Jork!\nA text-based Role-Playing game\nwhere you choose your journey!\n";
+    public static final String welcomePlayer = ", welcome  to com.jork.main.Jork!\nA text-based Role-Playing game\nwhere you choose your journey!\n";
     public static final String gameOver = "Your journey has now come to an end...";
     public static final String replayPrompt = "Would you like to play again? (Y/N)";
 
@@ -37,9 +39,9 @@ public class SystemMessages {
 
     public static final String helpPrompt = "\t> To act, type and enter one of the following: \n"; //Add list of actions later
 
-    public static final String invCheck = "\t> You check your inventory.\nInventory: ";
-    public static final String invAdd = "\t> You add the " + /*Item name*/ " to your inventory";
-    public static final String invUse = "\t> You use the " + /*Item name*/ ".\n";
+    public static final String invCheck = "\t> You check your inventory.\ncom.jork.items.Inventory: ";
+    public static final String invAdd = "\t> You add the " + /*com.jork.items.Item name*/ " to your inventory";
+    public static final String invUse = "\t> You use the " + /*com.jork.items.Item name*/ ".\n";
 
     public static final String movePrompt = "\t> To move, enter a direction (N, S, E, or W): ";
     public static final String directInvalid = "\t> You confuse yourself and wander in a circle.\nTry again: ";
@@ -47,7 +49,7 @@ public class SystemMessages {
     /**
      * Messages used in the storyline
      */
-    public static final String prologue_Start = /*Player name*/ ", after a long night of drinking at the Grumpy Tavern, \n" +
+    public static final String prologue_Start = /*com.jork.main.Player name*/ ", after a long night of drinking at the Grumpy Tavern, \n" +
             "you wake up to some harsh knocks at your door.\n\n\n";
     public static final String prologue_bedChoice = "Get out of bed? (Y/N)";
     public static final String prologue_bedChoice_Y = "\nYou get out of bed and start looking around the room.\n" +

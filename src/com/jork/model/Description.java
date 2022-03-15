@@ -1,3 +1,5 @@
+package com.jork.model;
+
 /**
  * Collection of strings describing items and spaces.
  * @author alexb
@@ -12,7 +14,7 @@ public class Description {
     //going to sleep on it and see if I can come up with an alt solution
 
 
-    //Item: Nails
+    //com.jork.items.Item: Nails
     String describe_0_With_Item =
             "\tYou stub your toe on two nails protruding from the floorboards,\n" +
             "\tDid you do this last night too or is it just deja vu?\n" +
@@ -21,7 +23,7 @@ public class Description {
     String describe_0_No_Item = "\tYour bed awaits your fated return.";
 
 
-    //Item: Sword
+    //com.jork.items.Item: Sword
     String describe_1_With_Item =
             "\tOn the nightstand lay your unsheathed sword.\n" +
             "\tIt's not particularly menacing or large, but everyone says size doesn't matter, right? \n" +
@@ -31,7 +33,7 @@ public class Description {
             "\tOh, wait, you've already sheathed it.";
 
 
-    //Window: Option: Jump/No Jump
+    //com.jork.space.Window: Option: Jump/No Jump
     String describe_2_No_Item =
             "\tThe window looks out to the courtyard behind the inn.\n" +
             "\tEither the sun is closer to the Earth than normal or your eyes are overly sensitive due to you hangover.\\n\" +\n" +
@@ -40,7 +42,7 @@ public class Description {
             "\tMight be a good escape if your knees can handle the fall!\");";
 
 
-    //Item: Marker
+    //com.jork.items.Item: Marker
     String describe_3_With_Item =
             "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
             "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.\n" +

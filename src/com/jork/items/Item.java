@@ -1,3 +1,5 @@
+package com.jork.items;
+
 /**
  * An enumeration for items to be stored in the {@link Inventory#inventory} {@code HashMap}.
  * @author jaspersn
@@ -60,12 +62,12 @@ public enum Item {
     NECKLACE("NECKLACE", false,"\tYou haven't owned a necklace since Puka shell necklaces went out of style.", "\tAn antique neckless bejewled and made of silver.\n" +
             "\tSomething about it feels magical."),
     /**
-     * Item value when there is no item.
+     * com.jork.items.Item value when there is no item.
      *
      */
     EMPTY("EMPTY", false,"empty", "empty"),
     /**
-     * Window
+     * com.jork.space.Window
      */
     WINDOW("WINDOW", false, "\tThe window is painted shut, it would likely take a good deal of strength to open.", "\tThe window is painted shut, it would likely take a good deal of strength to open."),
     /**
@@ -87,7 +89,7 @@ public enum Item {
             "\tAlas, you've nested atop a pile of your own clothing.\n" +
             "\tYou should count your blessings you have more than one set of clothes."),
     /**
-     * Door
+     * com.jork.space.Door
      */
     DOOR("DOOR", false, "\tThe wooden door to you room seems so far away from here.\n" +
             "\tYet the knocking, you swear, could be coming from inside your head.", "\tThe wooden door to you room seems so far away from here.\n" +
@@ -105,7 +107,7 @@ public enum Item {
      */
     BOOKSHELF("BOOKSHELF", false, "", ""),
     /**
-     * Latrine
+     * com.jork.space.Latrine
      */
     LATRINE("LATRINE", false, "Gross", "Holding it didn't make it any less gross"),
     /**

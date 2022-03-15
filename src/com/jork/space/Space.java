@@ -1,5 +1,7 @@
+package com.jork.space;
+import com.jork.items.Item;
 /**
- * Space class for creation of space objects which make up the Map array, and consist of the game spaces.
+ * com.jork.space.Space class for creation of space objects which make up the com.jork.main.Map array, and consist of the game spaces.
  * Inspired by Joshua Blochs builder design pattern @blogs.oracle.com/javamagazine/post/exploring-joshua-blochs-builder-design-pattern-in-java
  * @author alexl
  * @version 1.2

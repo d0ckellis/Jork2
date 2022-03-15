@@ -1,3 +1,12 @@
+package com.jork.main;
+
+import com.jork.items.Inventory;
+import com.jork.items.Item;
+import com.jork.model.Description;
+import com.jork.model.SystemMessages;
+import com.jork.space.Space;
+import com.jork.space.TrapDoor;
+import com.jork.space.Window;
 
 /**
  * A class for our {@link Setup} of the {@link Jork jork} game
@@ -7,9 +16,9 @@
  */
 public class Setup {
     /**
-     * Instantiates the Space[] to be size = 9
-     * calls the method to build the spaces within the Space[]
-     * @returns the Map built to the specifications for chapter one
+     * Instantiates the com.jork.space.Space[] to be size = 9
+     * calls the method to build the spaces within the com.jork.space.Space[]
+     * @returns the com.jork.main.Map built to the specifications for chapter one
      */
     public Map gameBuilder() {
         Space[] spacesChapOne = new Space[9];
@@ -19,7 +28,7 @@ public class Setup {
     /**
      * Builds the spaces that go in the chapter one space[].
      * @param spaces is the array set to a predetermined size.
-     * @returns Space[] for use by the game.
+     * @returns com.jork.space.Space[] for use by the game.
      */
     public Space[] buildChapterOneSpaces(Space[] spaces) {
         Description chapterOne = new Description();
