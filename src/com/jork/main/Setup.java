@@ -34,46 +34,46 @@ public class Setup {
     public Space[] buildChapterOneSpaces(Space[] spaces) {
         Description chapterOne = new Description();
 
-        spaces[0] = new Space.Builder(chapterOne.getDescribe_0_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_0_No_Item())
+        spaces[0] = new Space.Builder(chapterOne.getS0Description())
+                        .describeSpaceWithoutItem(chapterOne.getS0AltDescription())
                         .nonInvItem(Item.BED)
                         .item(Item.NAILS)
                         .build();
-        spaces[1] = new Space.Builder( chapterOne.getDescribe_1_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_1_No_Item())
+        spaces[1] = new Space.Builder( chapterOne.getS1Description())
+                        .describeSpaceWithoutItem(chapterOne.getS1AltDescription())
                         .nonInvItem(Item.NIGHTSTAND)
                         .item(Item.SWORD)
                         .build();
-        spaces[2] = new Window.Builder( chapterOne.getDescribe_2_No_Item())
+        spaces[2] = new Window.Builder( chapterOne.getS2Description())
                         .nonInvItem(Item.WINDOW)
                         .build();
-        spaces[3] = new Space.Builder(chapterOne.getDescribe_3_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_3_No_Item())
+        spaces[3] = new Space.Builder(chapterOne.getS3Description())
+                        .describeSpaceWithoutItem(chapterOne.getS3AltDescription())
                         .nonInvItem(Item.BOOKSHELF)
                         .item(Item.MARKER)
                         .build();
-        spaces[4] = new TrapDoor.Builder(chapterOne.getDescribe_4_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_4_Open_Trapdoor())
+        spaces[4] = new TrapDoor.Builder(chapterOne.getS4Description())
+                        .describeSpaceWithoutItem(chapterOne.getS4SubDescription())
                         .nonInvItem(Item.TRAPDOOR)
                         .item(Item.RUG)
                         .build();
-        spaces[5] = new Space.Builder(chapterOne.getDescribe_5_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_5_No_Item())
+        spaces[5] = new Space.Builder(chapterOne.getS5Description())
+                        .describeSpaceWithoutItem(chapterOne.getS5AltDescription())
                         .nonInvItem(Item.DESK)
                         .item(Item.POTION)
                         .build();
-        spaces[6] = new Space.Builder(chapterOne.getDescribe_6_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_6_No_Item())
+        spaces[6] = new Space.Builder(chapterOne.getS6Description())
+                        .describeSpaceWithoutItem(chapterOne.getS6AltDescription())
                         .nonInvItem(Item.BOOKSHELF)
                         .item(Item.PARCHMENT)
                         .build();
-        spaces[7] = new Space.Builder(chapterOne.getDescribe_7_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_7_No_Item())
+        spaces[7] = new Space.Builder(chapterOne.getS7Description())
+                        .describeSpaceWithoutItem(chapterOne.getS7AltDescription())
                         .nonInvItem(Item.DOOR)
                         .item(Item.KEY)
                         .build();
-        spaces[8] = new Space.Builder(chapterOne.getDescribe_8_With_Item())
-                        .describeSpaceWithoutItem(chapterOne.getDescribe_8_No_Item())
+        spaces[8] = new Space.Builder(chapterOne.getS8Description())
+                        .describeSpaceWithoutItem(chapterOne.getS8AltDescription())
                         .nonInvItem(Item.LATRINE)
                         .item(Item.CLOAK)
                         .build();

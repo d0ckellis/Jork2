@@ -9,6 +9,19 @@ public class Window extends Space {
     public Window(Builder builder) {
         super(builder);
     }
+
+    private void setIsWindowOpen() {
+        if(isWindowOpen = false) {
+            isWindowOpen = true;
+        }
+    }
+
+    public void setIsRugHung() {
+        if(isRugHung = false) {
+            isRugHung = true;
+        }
+    }
+
     public void use(Inventory inventory, String noun) {
         switch (noun.toUpperCase()) {
             //TODO: change to enums
@@ -24,16 +37,7 @@ public class Window extends Space {
                 super.use(inventory, noun);
         }
     }
-    private void setIsWindowOpen() {
-        if(isWindowOpen = false) {
-            isWindowOpen = true;
-        }
-    }
-    public void setIsRugHung() {
-        if(isRugHung = false) {
-            isRugHung = true;
-        }
-    }
+
     public void useWindow(Inventory inventory) {
         if (!isWindowOpen) {
             System.out.println("\tThe window is painted shut.\n");
@@ -80,23 +84,13 @@ public class Window extends Space {
                     "\tYou can see things in the room much better now.");
         }
     }
+
     public static class Builder extends Space.Builder{
         private String describeSpace;
-        private Item item;
         private Item nonInvItem;
 
-        public Builder(String describe_Space_With_Item) {
-            super(describe_Space_With_Item);
-        }
-
-        public Window.Builder describeSpaceWithoutItem(String describeSpaceWithoutItem) {
-            this.describeSpace = describeSpaceWithoutItem;
-            return this;
-        }
-
-        public Window.Builder item(Item item) {
-            this.item = item;
-            return this;
+        public Builder(String describeSpace) {
+            super(describeSpace);
         }
 
         public Window.Builder nonInvItem(Item nonInvItem) {
