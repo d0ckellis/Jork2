@@ -18,6 +18,7 @@ public class Jork {
     private Map map;
     private Space space;
     private Inventory inventory;
+    private int counter = 0;
     private static final String MOVE = "move";
     private static final String TAKE = "take";
     private static final String USE = "use";
@@ -42,19 +43,46 @@ public class Jork {
      * Creates {@link Setup} object,  the {@link Inventory} object and calls the gameBuilder method within
      *  as well as places the player in the starting space and begins the action() loop.
      */
-    public void jorkRun () {
-        System.out.println(SystemMessages.startUp);
+    private void jorkRun () {
+        System.out.println(SystemMessages.startUpTitle);
         inventory = new Inventory();
         Setup setup = new Setup();
         player = setup.buildPlayer(inventory);
         map = setup.gameBuilder();
         space = map.getCurrentSpace();
+        startChapterOne();
         action(player);
+    }
+
+    private void startChapterOne() {
+        System.out.println(SystemMessages.chapterOneTitle);
+        System.out.println("\t" + player.name + SystemMessages.harshKnocks);
+        String answer;
+        do {
+            System.out.print("Do you get out of bed? (Y/N)\n> ");
+            answer = CONSOLE.next();
+            CONSOLE.nextLine();
+            if(answer.toUpperCase().charAt(0) == 'Y') {
+                System.out.println(SystemMessages.outOfBed);
+                System.out.println(SystemMessages.pressEnterPrompt);
+                CONSOLE.nextLine();
+            } else if(counter == 0){
+                counter++;
+                System.out.println(SystemMessages.ignoreKnocks1part1 + player.name + SystemMessages.ignoreKnocks1part2);
+            } else if(counter == 1) {
+                counter++;
+                System.out.println(SystemMessages.ignoreKnocks2);
+            } else if(counter == 2){
+                System.out.println(SystemMessages.ignoreKnocks3);
+                answer = "yes";
+            }
+        } while (answer.toUpperCase().charAt(0) != 'Y');
+        System.out.println(SystemMessages.actionHelperPrompt);
     }
     /**
      * Method that asks user for game input and branches to other behavior in {@link Space} and {@link Map}
      */
-    public void action(Player player) {
+    private void action(Player player) {
         String noun = "";
         String verb = "";
         String answer = "";

@@ -11,7 +11,7 @@ public enum Item {
     /**
      * Sword
      */
-    SWORD(false,"\tA family heirloom that never looses it's edge.\n" +
+    SWORD(false,"\tA family heirloom that never loses it's edge.\n" +
             "\tIt's gotten you out of a few tricky situations, best not sell it.", "\tA family heirloom that never looses it's edge.\n" +
             "\tIt's gotten you out of a few tricky situations, best not sell it."),
     /**
@@ -19,9 +19,11 @@ public enum Item {
      */
     RUG(false, "\tIt's a shabby rug, that is embroidered to look like the night sky,\n" +
             "\tThe realism is striking in fact.\n" +
-            "\tWould probably block out the sun well enough, ironically.", "\tIt's a shabby rug, that is embroidered to look like the night sky,\n" +
+            "\tWould probably block out the sun well enough, ironically.\n" +
+            "\tIs that what ironic means? You probably don't know either.", "\tIt's a shabby rug, that is embroidered to look like the night sky,\n" +
             "\tThe realism is striking in fact.\n" +
-            "\tWould probably block out the sun well enough, ironically."),
+            "\tWould probably block out the sun well enough, ironically.\n" +
+            "\tIs that what ironic means? You probably don't know either."),
     /**
      * Nails
      */
@@ -114,7 +116,12 @@ public enum Item {
      * Trapdoor
      */
     TRAPDOOR(false, "You don't see that.","\tThe trapdoor that was underneath the rug looks mighty heavy.\n" +
-            "\tMaybe if you hadn't skipped leg day and arm day for the last few years, you could open it.");
+            "\tMaybe if you hadn't skipped leg day and arm day for the last few years, you could open it."),
+    /**
+     * Mirror
+     */
+    MIRROR(false, "\tThe mirror across the room on the armoire has always point in an odd direction.\n\tAnd it has a tendency of putting a few extra pounds on your reflection.",
+            "\tYour reflection doesn't look right. You weren't this ugly the last time you checked.\n");
 
     /**
      * The {@code String} corresponding to a particular value of the enumeration.

@@ -47,13 +47,13 @@ public class Description {
             "\tThere is a trapdoor hidden underneath the rug.\n" +
             "\tSomehow you hadn't noticed it before.";
     String s4SubDescription =
-            "\tThe trapdoor remains open, as you left it.\n" +
-            "\tEmpty of its contents.";
+            "\tThe trapdoor remains open, as you left it,\n" +
+            "\tempty of its contents.";
 
     String s5Description =
             "\tA potion of infinite enhancement sits on the desk.\n" +
             "\tYou won it in a game of chance last night, or was it the night before?\n" +
-            "\tEither way, it's probably not FDA approved, but it could be useful later on!" +
+            "\tEither way, it's probably not FDA approved, but it could be useful later on!\n" +
             "\tOn the ground is your empty coin pouch,\n" +
             "\twhich you emptied after several rounds of drinking last night.";
     String s5AltDescription =
@@ -61,8 +61,8 @@ public class Description {
             "\twhich you emptied after several rounds of drinking last night.";
 
     String s6Description =
-            "\tBehind the armoire is a tall bookshelf covered in a thick layer of dust." +
-            "\tYou see some old piece of parchment.\n" +
+            "\tBehind the armoire is a tall bookshelf covered in a thick layer of dust.\n" +
+            "\tYou see an old piece of parchment.\n" +
             "\tIt might be useful, or it might be rubbish.\n";
     String s6AltDescription =
             "\tThe bookshelf is mostly dusty, but for the outline of the parchment that now is in your pocket.";

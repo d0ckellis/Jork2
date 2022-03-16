@@ -10,7 +10,7 @@ public class SystemMessages {
     /**
      * Strings used outside the story
      */
-    public static final String startUp = "Booting...\n\n\nWelcome to... \n\n\n" +
+    public static final String startUpTitle = "Booting...\n\n\nWelcome to... \n\n\n" +
             "    ▄█  ▄██████▄     ▄████████    ▄█   ▄█▄\n" +
             "    ███ ███    ███   ███    ███   ███ ▄███▀\n" +
             "    ███ ███    ███   ███    ███   ███▐██▀  \n" +
@@ -22,13 +22,32 @@ public class SystemMessages {
             "▀▀▀▀▀▀               ███    ███   ▀        \n" +
             "                \n" +
             "       created by Alex Black, Andy Han, Anh Ngoc Vu, and Trevor Parker\n\n";
-    public static final String welcomePlayer = ", welcome  to com.jork.main.Jork!\nA text-based Role-Playing game\nwhere you choose your journey!\n";
+    public static final String chapterOneTitle = "\n\n" +
+            "▄████████    ▄█    █▄       ▄████████    ▄███████▄     ███        ▄████████    ▄████████       ▄██████▄  ███▄▄▄▄      ▄████████ \n" +
+            "███    ███   ███    ███     ███    ███   ███    ███ ▀█████████▄   ███    ███   ███    ███      ███    ███ ███▀▀▀██▄   ███    ███ \n" +
+            "███    █▀    ███    ███     ███    ███   ███    ███    ▀███▀▀██   ███    █▀    ███    ███      ███    ███ ███   ███   ███    █▀  \n" +
+            "███         ▄███▄▄▄▄███▄▄   ███    ███   ███    ███     ███   ▀  ▄███▄▄▄      ▄███▄▄▄▄██▀      ███    ███ ███   ███  ▄███▄▄▄     \n" +
+            "███        ▀▀███▀▀▀▀███▀  ▀███████████ ▀█████████▀      ███     ▀▀███▀▀▀     ▀▀███▀▀▀▀▀        ███    ███ ███   ███ ▀▀███▀▀▀     \n" +
+            "███    █▄    ███    ███     ███    ███   ███            ███       ███    █▄  ▀███████████      ███    ███ ███   ███   ███    █▄  \n" +
+            "███    ███   ███    ███     ███    ███   ███            ███       ███    ███   ███    ███      ███    ███ ███   ███   ███    ███ \n" +
+            "████████▀    ███    █▀      ███    █▀   ▄████▀         ▄████▀     ██████████   ███    ███       ▀██████▀   ▀█   █▀    ██████████ \n" +
+            "                                                                               ███    ███                                        \n" +
+            "...the Tax Man.\n" +
+            "(sometimes stories only have one chapter)\n\n";
+    public static final String harshKnocks = ", after a long night of drinking at the Grumpy Tavern, \n\tyou wake up to some harsh knocks at your door.\n";
+    public static final String outOfBed = "\tYou get out of bed and start looking around the room.\tYour head aches from the previous night's merriment,\n\tIt's far too bright, you asked the innkeeper for a curtain to block the window weeks ago,\n\tbut they told you you need to pay your back rent first.\n\tThe knocking continues...\n";
+    public static final String pressEnterPrompt = "Press Enter to continue.";
+    public static final String ignoreKnocks1part1 = "\tYou try and drown out the sound by burying your head under some dirty clothes you're using as a pillow.\n\tYou tell yourself that whatever is knocking is a problem for future ";
+    public static final String ignoreKnocks1part2 = ".\n\tNevertheless...the knocking persists.";
+    public static final String ignoreKnocks2 = "\tUnfortunately, your tactic of merely ignoring your life's problems continues its losing streak.\n\tThe knocking persists.\n";
+    public static final String ignoreKnocks3 = "\tYou must still be drunk.\n\tYou fall out of bed, despite your protestations.\n";
+    public static final String actionHelperPrompt = "To act, type and enter one of the following verbs below, followed by what you want to do with that action.\nIf you have to write this down, don't worry, I'm the only one judging you.\nYou should be happy I'm even telling you this much!\n\n\tmove\n\tlook\n\ttake\n\tuse\n\tcheck\n\thelp\n\tquit\n";
+    public static final String welcomePlayer = ", welcome  to Jork!\nA text-based Role-Playing game\nwhere you choose your journey!\n";
     public static final String gameOver = "Your journey has now come to an end...";
     public static final String replayPrompt = "Would you like to play again? (Y/N)";
-
     public static final String namePrompt = "What's our hero's name?\n> ";
     public static final String perkPrompt = "Are you strong, smart, or swift?\n> ";
-    public static final String perk_noAnswer = "Surely, you're good at ONE thing?";
+
 
     /**
      * Strings used in response to actions

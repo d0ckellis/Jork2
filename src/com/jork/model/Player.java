@@ -5,7 +5,7 @@ import com.jork.items.Inventory;
 /**
  * A class for storing com.jork.model.Player info and for building the player object.
  * @author alexb
- * @version 1.2
+ * @version 1.3
  */
 public class Player {
     public String name;

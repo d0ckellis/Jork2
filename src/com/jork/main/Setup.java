@@ -47,7 +47,7 @@ public class Setup {
                         .build();
         spaces[3] = new Armoire.Builder(chapterOne.getS3Description())
                         .describeSpaceWithoutItem(chapterOne.getS3AltDescription())
-                        .nonInvItem(Item.BOOKSHELF)
+                        .nonInvItem(Item.MIRROR)
                         .item(Item.MARKER)
                         .build();
         spaces[4] = new Trapdoor.Builder(chapterOne.getS4Description())
