@@ -14,16 +14,14 @@ public class Description {
     //going to sleep on it and see if I can come up with an alt solution
 
 
-    //com.jork.items.Item: Nails
     String describe_0_With_Item =
             "\tYou stub your toe on two nails protruding from the floorboards,\n" +
             "\tDid you do this last night too or is it just deja vu?\n" +
             "\tIt seems you're doomed to keep repeating this misfortune.\n" +
             "\tYour bed awaits your fated return.";
-    String describe_0_No_Item = "\tYour bed awaits your fated return.";
+    String describe_0_No_Item =
+            "\tYour bed awaits your fated return.";
 
-
-    //com.jork.items.Item: Sword
     String describe_1_With_Item =
             "\tOn the nightstand lay your unsheathed sword.\n" +
             "\tIt's not particularly menacing or large, but everyone says size doesn't matter, right? \n" +
@@ -32,8 +30,6 @@ public class Description {
             "\tYou swear you left your sword here on the nightstand.\n" +
             "\tOh, wait, you've already sheathed it.";
 
-
-    //com.jork.space.Window: Option: Jump/No Jump
     String describe_2_No_Item =
             "\tThe window looks out to the courtyard behind the inn.\n" +
             "\tEither the sun is closer to the Earth than normal or your eyes are overly sensitive due to you hangover.\\n\" +\n" +
@@ -41,8 +37,6 @@ public class Description {
             "\tYou can barely make out a horse pen across from your window if you squint.\n" +
             "\tMight be a good escape if your knees can handle the fall!\");";
 
-
-    //com.jork.items.Item: Marker
     String describe_3_With_Item =
             "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +
             "\tYour paranoia makes you wonder if anyone has spied on you through this mirror while you were asleep.\n" +
@@ -63,7 +57,6 @@ public class Description {
             "\tThe trapdoor remains open, as you left it.\n" +
             "\tEmpty of its contents.\");";
 
-
     String describe_5_With_Item = "\tA potion of infinite enhancement sits on the desk.\n" +
             "\tYou won it in a game of chance last night, or was it the night before?\n" +
             "\tEither way, it's probably not FDA approved, but it could be useful later on!" +
@@ -71,7 +64,6 @@ public class Description {
             "\twhich you emptied after several rounds of drinking last night.";
     String describe_5_No_Item = "\tOn the ground is your empty coin pouch,\n" +
             "\twhich you emptied after several rounds of drinking last night.";;
-
 
     String describe_6_With_Item = "\tBehind the armoire is a tall bookshelf covered in a thick layer of dust.\n" +
                     "\tYou see some old piece of parchment.\n" +
@@ -85,9 +77,6 @@ public class Description {
                     "\tThe knocking is as loud and fervent as ever. It's honestly impressive at this point.\n" +
                     "\tBut, you just want it to stop.\n\n" +
                     "\tDo you open it?";
-
-
-
     String describe_7_No_Item = "\tThe knocking is as loud and fervent as ever. It's honestly impressive at this point.\n" +
             "\tBut, you just want it to stop. Do you open it?\n";
 
@@ -100,8 +89,6 @@ public class Description {
     String describe_8_No_Item = "\tThe chair, that once had your cloak upon it, sits in the corner.\n" +
             "\tAs does the jar. Ew.\n";
 
-
-
     public String getDescribe_0_With_Item() {
         return describe_0_With_Item;
     }
@@ -109,8 +96,6 @@ public class Description {
     public String getDescribe_0_No_Item() {
         return describe_0_No_Item;
     }
-
-
 
     public String getDescribe_1_With_Item() {
         return describe_1_With_Item;
@@ -120,12 +105,9 @@ public class Description {
         return describe_1_No_Item;
     }
 
-
     public String getDescribe_2_No_Item() {
         return describe_2_No_Item;
     }
-
-
 
     public String getDescribe_3_With_Item() {
         return describe_3_With_Item;
@@ -134,10 +116,6 @@ public class Description {
     public String getDescribe_3_No_Item() {
         return describe_3_No_Item;
     }
-
-
-
-
 
     public String getDescribe_4_With_Item() {
         return describe_4_With_Item;
@@ -151,8 +129,6 @@ public class Description {
         return describe_4_Open_Trapdoor;
     }
 
-
-
     public String getDescribe_5_With_Item() {
         return describe_5_With_Item;
     }
@@ -161,9 +137,6 @@ public class Description {
         return describe_5_No_Item;
     }
 
-
-
-
     public String getDescribe_6_With_Item() {
         return describe_6_With_Item;
     }
@@ -171,8 +144,6 @@ public class Description {
     public String getDescribe_6_No_Item() {
         return describe_6_No_Item;
     }
-
-
 
     public String getDescribe_7_With_Item() {
         return describe_7_With_Item;

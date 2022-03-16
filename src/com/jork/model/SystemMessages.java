@@ -49,7 +49,7 @@ public class SystemMessages {
     /**
      * Messages used in the storyline
      */
-    public static final String prologue_Start = /*com.jork.main.Player name*/ ", after a long night of drinking at the Grumpy Tavern, \n" +
+    public static final String prologue_Start = /*com.jork.model.Player name*/ ", after a long night of drinking at the Grumpy Tavern, \n" +
             "you wake up to some harsh knocks at your door.\n\n\n";
     public static final String prologue_bedChoice = "Get out of bed? (Y/N)";
     public static final String prologue_bedChoice_Y = "\nYou get out of bed and start looking around the room.\n" +

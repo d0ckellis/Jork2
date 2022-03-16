@@ -83,7 +83,7 @@ public class Map {
     }
     //TODO: Fix bug in move right expression. It isn't preventing teleporting as it should, and allows arrayindexoutofbounds exception
     private String moveRight() {
-        if (currentPos + 1 % getWidth() == 0) return invalidMove();
+        if ((currentPos + 1) % getWidth() == 0) return invalidMove();
         else currentPos++;
         System.out.println(currentPos);
         return spaces[currentPos].getSpaceDescription();

@@ -1,9 +1,9 @@
-package com.jork.main;
+package com.jork.model;
 
 import com.jork.items.Inventory;
 
 /**
- * A class for storing com.jork.main.Player info and for building the player object.
+ * A class for storing com.jork.model.Player info and for building the player object.
  * @author alexb
  * @version 1.2
  */

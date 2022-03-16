@@ -15,9 +15,7 @@ import java.util.Scanner;
 public class Jork {
     private Map map;
     private Space space;
-    private Player player;
     private Inventory inventory;
-    private Space[] spaces;
     private static final String MOVE = "move";
     private static final String TAKE = "take";
     private static final String USE = "use";
@@ -39,24 +37,18 @@ public class Jork {
         jork.jorkRun();
     }
     /**
-     * Empties the visible {@code Console} after every action
-     * Must change command depending on os system
+     * Creates {@link Setup} object,  the {@link Inventory} object and calls the gameBuilder method within
+     *  as well as places the player in the starting space and begins the action() loop.
      */
-    public void consoleWipe() throws IOException, InterruptedException {
-        String systemName = System.getProperty("os.name");
-        // Windows code: cls
-        // Linux code: reset
-        // Mac code:
-        if(systemName.equals("Linux")) {
-            new ProcessBuilder("reset").inheritIO().start().waitFor();
-        } else if (systemName.equals("Windows")) {
-            new ProcessBuilder("cls").inheritIO().start().waitFor();
-        }
-        //new ProcessBuilder("reset").inheritIO().start().waitFor();
-
-        System.out.println("Console cleared!");
+    public void jorkRun () {
+        System.out.println(SystemMessages.startUp);
+        Setup setup = new Setup();
+        map = setup.gameBuilder();
+        inventory = new Inventory();
+        space = map.getCurrentSpace();
+        setup.buildPlayer(inventory);
+        action();
     }
-
     /**
      * Method that asks user for game input and branches to other behavior in {@link Space} and {@link Map}
      */
@@ -80,34 +72,37 @@ public class Jork {
             System.out.println(noun);
             switch (verb.toLowerCase()) {
                 case MOVE: space = map.move(noun);
+                    System.out.println(space.getClass().getSimpleName());
                     break;
-                case USE:
+                case USE: space.use(inventory, noun);
                     break;
                 case TAKE: inventory.add(space.take(noun));
                     break;
-                case LOOK:
-                    System.out.println(space.look(noun));
+                case LOOK: System.out.println(space.look(noun));
                     break;
                 case CHECK: inventory.printInventory();
                     break;
                 default:
                     System.out.println("You can't do that.");
-                    action();
             }
         } while (true);
     }
-
     /**
-     * Creates {@link Setup} object,  the {@link Inventory} object and calls the gameBuilder method within
-     *  as well as places the player in the starting space and begins the action() loop.
+     * Empties the visible {@code Console} after every action
+     * Must change command depending on os system
      */
-    public void jorkRun () {
-        System.out.println(SystemMessages.startUp);
-        Setup setup = new Setup();
-        map = setup.gameBuilder();
-        inventory = new Inventory();
-        space = map.getCurrentSpace();
-        setup.buildPlayer(inventory);
-        action();
+    public void consoleWipe() throws IOException, InterruptedException {
+        String systemName = System.getProperty("os.name");
+        // Windows code: cls
+        // Linux code: reset
+        // Mac code:
+        if(systemName.equals("Linux")) {
+            new ProcessBuilder("reset").inheritIO().start().waitFor();
+        } else if (systemName.equals("Windows")) {
+            new ProcessBuilder("cls").inheritIO().start().waitFor();
+        }
+        //new ProcessBuilder("reset").inheritIO().start().waitFor();
+
+        System.out.println("Console cleared!");
     }
 }

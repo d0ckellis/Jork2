@@ -1,4 +1,5 @@
 package com.jork.space;
+import com.jork.items.Inventory;
 import com.jork.items.Item;
 import com.jork.main.Jork;
 
@@ -8,46 +9,51 @@ import com.jork.main.Jork;
  * @author alexl
  * @version 1.2
  */
-public class Space{
-    private boolean hasItem = true;
-    private final String describe_Space_With_Item;
-    private final String describe_Space_Without_Item;
+public class Space {
+    private boolean itemAvailable = true;
+    private final String describeSpace;
+    private final String describeSpaceWithoutItem;
     public final Item item;
     public final Item nonInvItem;
 
 
     public Space(Builder builder) {
-        this.describe_Space_With_Item = builder.describe_Space_With_Item;
-        this.describe_Space_Without_Item = builder.describe_Space_Without_Item;
+        this.describeSpace = builder.describeSpace;
+        this.describeSpaceWithoutItem = builder.describeSpaceWithoutItem;
         this.item = builder.item;
         this.nonInvItem = builder.nonInvItem;
     }
 
-    public boolean getHasItem() {return hasItem;}
 
-    public void setHasItem() {hasItem = !hasItem;}
+    public boolean isItemAvailable() {return itemAvailable;}
 
-    public String getDescribe_Space_With_Item() {return describe_Space_With_Item;}
 
-    public String getDescribe_Space_Without_Item() {return describe_Space_Without_Item;}
+    public void setHasItem() {
+        itemAvailable = !itemAvailable;}
+
+
+    public String getDescribeSpace() {return describeSpace;}
+
+
+    public String getDescribeSpaceWithoutItem() {return describeSpaceWithoutItem;}
 
     public Item getItem() {return item;}
 
     public Item getNonInvItem() {return nonInvItem;}
 
     public static class Builder {
-        private final String describe_Space_With_Item;
-        private String describe_Space_Without_Item;
+        private final String describeSpace;
+        private String describeSpaceWithoutItem;
         private Item item;
         private Item nonInvItem;
 
-        public Builder(String describe_Space_With_Item) {
-            this.describe_Space_With_Item = describe_Space_With_Item;
+        public Builder(String describeSpace) {
+            this.describeSpace = describeSpace;
 
         }
 
-        public Builder Describe_Space_Without_Item(String describe_Space_Without_Item) {
-            this.describe_Space_Without_Item = describe_Space_Without_Item;
+        public Builder describeSpaceWithoutItem(String describeSpaceWithoutItem) {
+            this.describeSpaceWithoutItem = describeSpaceWithoutItem;
             return this;
         }
 
@@ -55,23 +61,26 @@ public class Space{
             this.item = item;
             return this;
         }
+
         public Builder nonInvItem(Item nonInvItem) {
             this.nonInvItem = nonInvItem;
             return this;
         }
+
         public Space build() {
             return new Space(this);
         }
     }
 
+
     public String getSpaceDescription() {
-        if (hasItem)  {return describe_Space_With_Item;}
-        else {return describe_Space_Without_Item;}
+        if (itemAvailable)  {return describeSpace;}
+        else {return describeSpaceWithoutItem;}
     }
 
     public Item take(String noun) {
-        if (noun.toUpperCase().equals(item.name()) && hasItem) {
-            hasItem = false;
+        if (noun.toUpperCase().equals(item.name()) && itemAvailable) {
+            itemAvailable = false;
             return item;
         } else {
             return Item.EMPTY;
@@ -85,15 +94,12 @@ public class Space{
         } else return "\tNot much more to that.";
     }
     //placeholder for use method
-    public String use() {
-        String string = "";
-        return string;
+    public void use(Inventory inventory, String noun) {
+        System.out.println("failed");
     }
     public Boolean yesOrNo() {
         String answer = Jork.CONSOLE.next();
         Jork.CONSOLE.nextLine();
-        if (answer.charAt(0) == 'y' || answer.charAt(0) == 'Y') {
-            return true;
-        } else return false;
+        return answer.toUpperCase().charAt(0) == 'Y';
     }
 }
