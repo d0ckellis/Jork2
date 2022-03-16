@@ -13,8 +13,11 @@ public class Player {
     public int intelligence;
     public int agility;
     public Inventory inventory;
+    public Boolean hasHungRug = false;
+    public Boolean hasSeenGlint = false;
+    public Boolean hasWetParchment = false;
 
-    private Player(Builder builder) {
+    public Player(Builder builder) {
         this.name = builder.name;
         this.strength = builder.strength;
         this.intelligence = builder.intelligence;
@@ -22,20 +25,17 @@ public class Player {
         this.inventory = builder.inventory;
     }
 
-    //creating getter and setter for name and power of player
     public void setName(String n) {name = n;}
 
     public String getName() {
         return name;
     }
 
-    public void setPower(int p) {
+    public void setStrength(int p) {
         strength = p;
     }
 
-    public int getPower() {
-        return strength;
-    }
+    public int getStrength() {return strength;}
 
     public void setIntelligence(int smart) {
         intelligence = smart;
@@ -53,6 +53,29 @@ public class Player {
         return agility;
     }
 
+    public Boolean getHasHungRug() {return hasHungRug;}
+
+    public Boolean getHasSeenGlint() {return hasSeenGlint;}
+
+    public Boolean getHasWetParchment() {return hasWetParchment;}
+
+    public void setHasWetParchment() {
+        if(hasWetParchment = false) {
+            hasWetParchment = true;
+        }
+    }
+
+    public void setHasSeenGlint() {
+        if(hasSeenGlint = false) {
+            hasSeenGlint = true;
+        }
+    }
+
+    public void setHasHungRug() {
+        if (hasHungRug = false) {
+            hasHungRug = true;
+        }
+    }
 
     public static class Builder {
         public String name;

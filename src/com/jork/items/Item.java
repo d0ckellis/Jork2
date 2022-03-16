@@ -121,15 +121,15 @@ public enum Item {
      */
     private Boolean itemInInventory;
     private final String description;
-    private final String description_In_Inv;
+    private final String descriptionUpClose;
 
     /**
      * Constructs a new {@link Item} with the specified {@code String}.
      */
-    Item(Boolean itemInInventory, String description, String description_In_Inv) {
+    Item(Boolean itemInInventory, String description, String descriptionUpClose) {
         this.itemInInventory = itemInInventory;
         this.description = description;
-        this.description_In_Inv = description_In_Inv;
+        this.descriptionUpClose = descriptionUpClose;
     }
 
     /**
@@ -139,7 +139,7 @@ public enum Item {
     public String getValidDescription() {
         if(!getItemInInventory()) {
             return description;
-        } else { return description_In_Inv;
+        } else { return descriptionUpClose;
         }
     }
     public Boolean getItemInInventory() {return itemInInventory;}

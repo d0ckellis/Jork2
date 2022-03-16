@@ -4,7 +4,7 @@ package com.jork.model;
  * Collection of strings describing items and spaces.
  * @author alexb
  * @author allyv
- * @version 1.1
+ * @version 1.3
  */
 public class Description {
 
@@ -157,8 +157,4 @@ public class Description {
     public String getS8AltDescription() {
         return s8AltDescription;
     }
-
-
-
-
 }

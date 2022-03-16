@@ -1,13 +1,20 @@
 package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.items.Item;
+import com.jork.model.Player;
 
 public class Window extends Space {
+
     private Boolean isWindowOpen = false;
+
     public Boolean isRugHung = false;
 
     public Window(Builder builder) {
         super(builder);
+    }
+
+    private Boolean getWindowOpen() {
+        return isWindowOpen;
     }
 
     private void setIsWindowOpen() {
@@ -16,13 +23,17 @@ public class Window extends Space {
         }
     }
 
+    public Boolean getRugHung() {
+        return isRugHung;
+    }
+
     public void setIsRugHung() {
         if(isRugHung = false) {
             isRugHung = true;
         }
     }
 
-    public void use(Inventory inventory, String noun) {
+    public void use(Inventory inventory, String noun, Player player) {
         switch (noun.toUpperCase()) {
             //TODO: change to enums
             case "WINDOW":
@@ -33,8 +44,7 @@ public class Window extends Space {
             case "RUG": useRug(inventory);
                 break;
             default:
-                System.out.println("whoops");
-                super.use(inventory, noun);
+                super.use(inventory, noun, player);
         }
     }
 
@@ -86,16 +96,8 @@ public class Window extends Space {
     }
 
     public static class Builder extends Space.Builder{
-        private String describeSpace;
-        private Item nonInvItem;
-
         public Builder(String describeSpace) {
             super(describeSpace);
-        }
-
-        public Window.Builder nonInvItem(Item nonInvItem) {
-            this.nonInvItem = nonInvItem;
-            return this;
         }
 
         public Window build() {

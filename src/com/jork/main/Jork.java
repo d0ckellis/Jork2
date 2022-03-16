@@ -1,6 +1,7 @@
 package com.jork.main;
 
 import com.jork.items.Inventory;
+import com.jork.model.Player;
 import com.jork.model.SystemMessages;
 import com.jork.space.Space;
 
@@ -13,6 +14,7 @@ import java.util.Scanner;
  * @version 1.5
  */
 public class Jork {
+    private Player player;
     private Map map;
     private Space space;
     private Inventory inventory;
@@ -42,17 +44,17 @@ public class Jork {
      */
     public void jorkRun () {
         System.out.println(SystemMessages.startUp);
-        Setup setup = new Setup();
-        map = setup.gameBuilder();
         inventory = new Inventory();
+        Setup setup = new Setup();
+        player = setup.buildPlayer(inventory);
+        map = setup.gameBuilder();
         space = map.getCurrentSpace();
-        setup.buildPlayer(inventory);
-        action();
+        action(player);
     }
     /**
      * Method that asks user for game input and branches to other behavior in {@link Space} and {@link Map}
      */
-    public void action() {
+    public void action(Player player) {
         String noun = "";
         String verb = "";
         String answer = "";
@@ -63,7 +65,7 @@ public class Jork {
             //TODO:make varied entries for different outcomes, ie array size 1, 3, etc.
             if (inputs.length != 2) {
                 System.out.print("You must specify only an action and target/direction.");
-                action();
+                action(player);
             } else {
                 verb = inputs[0];
                 noun = inputs[1];
@@ -74,7 +76,7 @@ public class Jork {
                 case MOVE: space = map.move(noun);
                     System.out.println(space.getClass().getSimpleName());
                     break;
-                case USE: space.use(inventory, noun);
+                case USE: space.use(inventory, noun, player);
                     break;
                 case TAKE: inventory.add(space.take(noun));
                     break;

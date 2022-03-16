@@ -5,9 +5,7 @@ import com.jork.items.Item;
 import com.jork.model.Description;
 import com.jork.model.Player;
 import com.jork.model.SystemMessages;
-import com.jork.space.Space;
-import com.jork.space.TrapDoor;
-import com.jork.space.Window;
+import com.jork.space.*;
 
 /**
  * A class for our {@link Setup} of the {@link Jork jork} game
@@ -47,12 +45,12 @@ public class Setup {
         spaces[2] = new Window.Builder( chapterOne.getS2Description())
                         .nonInvItem(Item.WINDOW)
                         .build();
-        spaces[3] = new Space.Builder(chapterOne.getS3Description())
+        spaces[3] = new Armoire.Builder(chapterOne.getS3Description())
                         .describeSpaceWithoutItem(chapterOne.getS3AltDescription())
                         .nonInvItem(Item.BOOKSHELF)
                         .item(Item.MARKER)
                         .build();
-        spaces[4] = new TrapDoor.Builder(chapterOne.getS4Description())
+        spaces[4] = new Trapdoor.Builder(chapterOne.getS4Description())
                         .describeSpaceWithoutItem(chapterOne.getS4SubDescription())
                         .nonInvItem(Item.TRAPDOOR)
                         .item(Item.RUG)
@@ -67,12 +65,12 @@ public class Setup {
                         .nonInvItem(Item.BOOKSHELF)
                         .item(Item.PARCHMENT)
                         .build();
-        spaces[7] = new Space.Builder(chapterOne.getS7Description())
+        spaces[7] = new Door.Builder(chapterOne.getS7Description())
                         .describeSpaceWithoutItem(chapterOne.getS7AltDescription())
                         .nonInvItem(Item.DOOR)
                         .item(Item.KEY)
                         .build();
-        spaces[8] = new Space.Builder(chapterOne.getS8Description())
+        spaces[8] = new Latrine.Builder(chapterOne.getS8Description())
                         .describeSpaceWithoutItem(chapterOne.getS8AltDescription())
                         .nonInvItem(Item.LATRINE)
                         .item(Item.CLOAK)

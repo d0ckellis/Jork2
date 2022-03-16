@@ -2,6 +2,7 @@ package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.items.Item;
 import com.jork.main.Jork;
+import com.jork.model.Player;
 
 /**
  * com.jork.space class for creation of space objects which make up the com.jork.main.Map array, and consist of the game spaces.
@@ -27,13 +28,10 @@ public class Space {
 
     public boolean isItemAvailable() {return itemAvailable;}
 
-
     public void setHasItem() {
         itemAvailable = !itemAvailable;}
 
-
     public String getDescribeSpace() {return describeSpace;}
-
 
     public String getDescribeSpaceWithoutItem() {return describeSpaceWithoutItem;}
 
@@ -49,7 +47,6 @@ public class Space {
 
         public Builder(String describeSpace) {
             this.describeSpace = describeSpace;
-
         }
 
         public Builder describeSpaceWithoutItem(String describeSpaceWithoutItem) {
@@ -72,7 +69,6 @@ public class Space {
         }
     }
 
-
     public String getSpaceDescription() {
         if (itemAvailable)  {return describeSpace;}
         else {return describeSpaceWithoutItem;}
@@ -94,7 +90,7 @@ public class Space {
         } else return "\tNot much more to that.";
     }
     //placeholder for use method
-    public void use(Inventory inventory, String noun) {
+    public void use(Inventory inventory, String noun, Player player) {
         System.out.println("failed");
     }
     public Boolean yesOrNo() {
