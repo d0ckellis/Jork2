@@ -106,11 +106,19 @@ public class Space {
     //placeholder for use method
     public void use(Inventory inventory, String noun, Player player) {
         Item temp = Item.valueOf(noun.toUpperCase());
-        if(inventory.hasItem(temp)) {
-                System.out.println(temp.getDescriptionUpClose());
+        if (inventory.hasItem(temp)) {
+            switch (temp) {
+                case POTION: usePotion(inventory, player);
+                    break;
+                default: System.out.println(temp.getDescriptionWhenUsed());
             }
         }
-
+    }
+    public void usePotion(Inventory inventory, Player player) {
+        player.setStrength(player.getStrength() + 5);
+        inventory.remove(Item.POTION);
+        System.out.println("\t> You drink the elixir. You feel invigorated, like you could lift an ox.");
+    }
 
     public Boolean yesOrNo() {
         String answer = Jork.CONSOLE.next();
