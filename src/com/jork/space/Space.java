@@ -88,12 +88,19 @@ public class Space {
     }
 
     public Item take(String noun, Player player, Inventory inventory) {
-        if (noun.toUpperCase().equals(item.name()) && itemAvailable) {
-            itemAvailable = false;
-            return item;
+        Item temp = Item.valueOf(noun.toUpperCase());
+        if (!inventory.hasItem(temp)) {
+            if (noun.toUpperCase().equals(item.name()) && itemAvailable) {
+                itemAvailable = false;
+                return item;
+            } else {
+                System.out.println("\tYou either can't or don't know how, you decide.");
+                return Item.EMPTY;
+            }
         } else {
-            return Item.EMPTY;
+            System.out.println("\tYou already have " + temp + " in your inventory.");
         }
+        return Item.EMPTY;
     }
     public String look(String noun) {
             if (item != null && noun.toUpperCase().equals(item.name())) {

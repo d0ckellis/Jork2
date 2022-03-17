@@ -16,15 +16,12 @@ public class Inventory {
     }
 
     public void add(Item item) {
-        if(item != Item.EMPTY) {
+        if (item != Item.EMPTY) {
             inventory.put(item, true);
             item.setItemInInventory();
             System.out.println(addedItem(item));
-        } else {
-            System.out.println("You either can't or don't know how, you decide.");
         }
     }
-
     public void remove(Item item) {
         inventory.remove(item);
     }
