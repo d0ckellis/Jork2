@@ -107,6 +107,7 @@ public class Space {
     public void use(Inventory inventory, String noun, Player player) {
         System.out.println("failed");
     }
+
     public Boolean yesOrNo() {
         String answer = Jork.CONSOLE.next();
         Jork.CONSOLE.nextLine();
