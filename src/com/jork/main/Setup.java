@@ -85,9 +85,21 @@ public class Setup {
         System.out.println("\nHello, " + name + SystemMessages.welcomePlayer);
         System.out.print(SystemMessages.perkPrompt);
         String attribute = Jork.CONSOLE.next();
+        int strength = 1;
+        int agility = 1;
+        int intelligence = 1;
+        switch (attribute.toUpperCase()) {
+            case "STRONG": strength = 5;
+                break;
+            case "SWIFT": agility = 5;
+                break;
+            case "SMART": intelligence = 5;
+                break;
+            default: strength = 3;
+        }
         Jork.CONSOLE.nextLine();
         verifyAttribute(attribute);
-        return new Player.Builder(name, 1, 1, 1, inventory).build();
+        return new Player.Builder(name, strength, intelligence, agility, inventory).build();
     }
     public String verifyAttribute(String attribute) {
         if (attribute.equalsIgnoreCase("strong")) {
