@@ -7,7 +7,7 @@ import com.jork.model.SystemMessages;
 import java.util.Random;
 
 public class Trapdoor extends Space {
-    public Boolean isTrapDoorOpen;
+    public Boolean isTrapDoorOpen = false;
 
     private Boolean getIsTrapDoorOpen() {return isTrapDoorOpen;}
 
