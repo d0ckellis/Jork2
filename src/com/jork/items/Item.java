@@ -149,6 +149,10 @@ public enum Item {
         } else { return descriptionUpClose;
         }
     }
+    public String getDescriptionUpClose() {
+        return descriptionUpClose;
+    }
+
     public Boolean getItemInInventory() {return itemInInventory;}
     public Boolean setItemInInventory() {return itemInInventory = true;}
 }

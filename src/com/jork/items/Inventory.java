@@ -1,5 +1,6 @@
 package com.jork.items;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -10,7 +11,6 @@ import java.util.HashMap;
  */
 public class Inventory {
     HashMap<Item, Boolean> inventory = new HashMap<>();
-
     public boolean hasItem(Item item) {
         return inventory.containsKey(item);
     }

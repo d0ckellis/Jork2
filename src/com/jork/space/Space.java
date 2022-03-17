@@ -105,8 +105,12 @@ public class Space {
 
     //placeholder for use method
     public void use(Inventory inventory, String noun, Player player) {
-        System.out.println("failed");
-    }
+        Item temp = Item.valueOf(noun.toUpperCase());
+        if(inventory.hasItem(temp)) {
+                System.out.println(temp.getDescriptionUpClose());
+            }
+        }
+
 
     public Boolean yesOrNo() {
         String answer = Jork.CONSOLE.next();
