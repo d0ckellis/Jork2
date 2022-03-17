@@ -1,6 +1,7 @@
 package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.model.Player;
+import com.jork.model.SystemMessages;
 
 import java.util.Random;
 
@@ -24,16 +25,12 @@ public class Armoire extends Space {
             int result = new Random().nextInt(20) + 1 + player.getIntelligence();
             if (result > 14) {
                 player.setHasSeenGlint();
-                System.out.println("\tYou see a glint of gold in the mirror.\n" +
-                        "\tThere is something on the desk behind you,\n" +
-                        "\tthat you couldn't have noticed without looking through the mirror.");
+                System.out.println(SystemMessages.armoire_glintSeen);
             } else {
                 System.out.println("\tYour reflection doesn't look right. You weren't this ugly the last time you checked.");
             }
         } else {
-            System.out.println("\tYou still see a glint of gold in the mirror.\n" +
-                    "\tPerhaps your spatial awareness isn't all that great after a night of drinking, \n" +
-                    "\tbut I'll give you a hint. It's on the desk.");
+            System.out.println(SystemMessages.armoire_glintSeen);
         }
     }
 

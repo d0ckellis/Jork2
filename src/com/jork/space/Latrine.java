@@ -1,6 +1,7 @@
 package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.model.Player;
+import com.jork.model.SystemMessages;
 
 public class Latrine extends Space {
     public Latrine(Builder builder) {
@@ -17,11 +18,7 @@ public class Latrine extends Space {
     }
     public void useLatrine(Player player) {
         if(player.getHasWetParchment()) {
-            System.out.println("\tNo...no...\n" +
-                    "\tYou're kidding right?\n" +
-                    "\tOkay, fine.\n" +
-                    "\tYou dip the parchment in the latrine. It's wet. Are you happy with yourself?\n" +
-                    "\tThere had to be a better way.");
+            System.out.println(SystemMessages.latrine_dip);
         } else {
             System.out.println("\tNot while everyone is watching.");
         }

@@ -2,6 +2,7 @@ package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.items.Item;
 import com.jork.model.Player;
+import com.jork.model.SystemMessages;
 
 import java.util.Random;
 
@@ -31,10 +32,7 @@ public class Trapdoor extends Space {
         if (inventory.hasItem(Item.RUG) || player.getHasHungRug() && !getIsTrapDoorOpen()) {
             int result = new Random().nextInt(20) + 1 + player.getStrength();
             if (result >= 15) {
-                System.out.println("\tYour strength allows you to lift the heavy door open\n" +
-                        "\trevealing a small compartment underneath.\n" +
-                        "\tYou wipe away the cobwebs to reveal an antique neckless bejewled and made of silver.\n" +
-                        "\tSomething about it feels magical.");
+                System.out.println(SystemMessages.td_open);
                 inventory.add(Item.NECKLACE);
                 player.setIntelligence(player.getIntelligence() + 5);
             } else {

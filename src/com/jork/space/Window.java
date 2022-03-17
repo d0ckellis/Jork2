@@ -2,6 +2,7 @@ package com.jork.space;
 import com.jork.items.Inventory;
 import com.jork.items.Item;
 import com.jork.model.Player;
+import com.jork.model.SystemMessages;
 
 public class Window extends Space {
 
@@ -52,17 +53,15 @@ public class Window extends Space {
         if (!isWindowOpen) {
             System.out.println("\tThe window is painted shut.\n");
             if (inventory.hasItem(Item.SWORD)) {
-                System.out.println("\tYou could try prying it open with your sword.\n" +
-                        "\tWould you like to do that?");
+                System.out.println(SystemMessages.window_swordPrompt);
                 setIsWindowOpen();
                 if (yesOrNo()) {
-                    System.out.println("\tYou take the sword from its sheath and place its pointed edge on the sill.\n" +
-                            "\tPutting your weight against it, you wedge the blade underneath the window.\n" +
-                            "\tIt opens, finally making this room up to fire code.\n" +
-                            "\tDo you jump out the window?");
+                    System.out.println(SystemMessages.window_opened);
                     if (yesOrNo()) {
-                        System.out.println("Your pants get caught on the latch, you fall to your death.");
+                        System.out.println(SystemMessages.window_death);
                         //end game somehow
+                        System.out.println(SystemMessages.quitMessage);
+                        System.exit(0);
                     }
                 }
             }
@@ -74,9 +73,7 @@ public class Window extends Space {
                 inventory.remove(Item.NAILS);
                 inventory.remove(Item.RUG);
                 setIsRugHung();
-                System.out.println("\tYou drape the rug across the window, pinning it with nails, hammering them into the wall with the hilt of your sword.\n" +
-                        "\tNothing like a little renovation to ease your headache.\n" +
-                        "\tYou can see things in the room much better now.");
+                System.out.println(SystemMessages.window_hangedRug);
             } else {
                 System.out.println("\tYou need something to hammer them with. You're hard-headed, but not that hard.");
             }
@@ -89,9 +86,7 @@ public class Window extends Space {
             inventory.remove(Item.NAILS);
             inventory.remove(Item.RUG);
             setIsRugHung();
-            System.out.println("\tYou drape the rug across the window, pinning it with nails, hammering them into the wall with the hilt of your sword.\n" +
-                    "\tNothing like a little renovation to ease your headache.\n" +
-                    "\tYou can see things in the room much better now.");
+            System.out.println(SystemMessages.window_hangedRug);
         }
     }
 

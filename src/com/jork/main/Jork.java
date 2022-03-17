@@ -124,7 +124,7 @@ public class Jork {
                 case QUIT: player.quitGame = true;
                     break;
                 default:
-                    System.out.println("You can't do that.");
+                    System.out.println(SystemMessages.actionInvalid);
             }
         } while (!player.quitGame);
     }
