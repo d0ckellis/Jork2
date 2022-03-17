@@ -96,12 +96,13 @@ public class Space {
         }
     }
     public String look(String noun) {
-        if (noun.toUpperCase().equals(item.name())) {
-            return item.getValidDescription();
-        } else if (noun.toUpperCase().equals(nonInvItem.name())) {
-            return nonInvItem.getValidDescription();
-        } else return "\tNot much more to that.";
-    }
+            if (item != null && noun.toUpperCase().equals(item.name())) {
+                return item.getValidDescription();
+            } else if (noun.toUpperCase().equals(nonInvItem.name())) {
+                return nonInvItem.getValidDescription();
+            } else return "\tNot much more to that.";
+        }
+
     //placeholder for use method
     public void use(Inventory inventory, String noun, Player player) {
         System.out.println("failed");

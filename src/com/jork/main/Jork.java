@@ -126,6 +126,7 @@ public class Jork {
                 default:
                     System.out.println("You can't do that.");
             }
+            //TODO fix quit game build.
         } while (!player.quitGame);
     }
     /**
