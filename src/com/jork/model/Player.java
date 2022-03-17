@@ -16,6 +16,7 @@ public class Player {
     public Boolean hasHungRug = false;
     public Boolean hasSeenGlint = false;
     public Boolean hasWetParchment = false;
+    public Boolean quitGame = false;
 
     public Player(Builder builder) {
         this.name = builder.name;

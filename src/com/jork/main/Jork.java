@@ -25,6 +25,8 @@ public class Jork {
     private static final String USE = "use";
     private static final String LOOK = "look";
     private static final String CHECK = "check";
+    private static final String HELP = "help";
+    private static final String QUIT = "quit";
     public static final Scanner CONSOLE = new Scanner(System.in);
 /**
  * Constructor for com.jork.main.Jork
@@ -49,10 +51,12 @@ public class Jork {
         inventory = new Inventory();
         Setup setup = new Setup();
         player = setup.buildPlayer(inventory);
+        player.quitGame = false;
         map = setup.gameBuilder();
         space = map.getCurrentSpace();
         startChapterOne();
         action(player);
+        gameOver();
     }
 
     private void startChapterOne() {
@@ -115,16 +119,22 @@ public class Jork {
                     break;
                 case CHECK: inventory.printInventory();
                     break;
+                case HELP: System.out.println(SystemMessages.actionHelperPrompt);
+                    break;
+                case QUIT: player.quitGame = true;
+                    break;
                 default:
                     System.out.println("You can't do that.");
             }
-        } while (true);
+        } while (!player.quitGame);
     }
     /**
      * Empties the visible {@code Console} after every action
      * Must change command depending on os system
      */
     public void consoleWipe() throws IOException, InterruptedException {
+        System.out.println("This shouldn't be seen if working correctly...");
+
         String systemName = System.getProperty("os.name");
         // Windows code: cls
         // Linux code: reset
@@ -134,8 +144,10 @@ public class Jork {
         } else if (systemName.equals("Windows")) {
             new ProcessBuilder("cls").inheritIO().start().waitFor();
         }
-        //new ProcessBuilder("reset").inheritIO().start().waitFor();
+    }
 
-        System.out.println("Console cleared!");
+    public void gameOver() {
+        System.out.println(SystemMessages.quitMessage);
+        System.exit(0);
     }
 }
