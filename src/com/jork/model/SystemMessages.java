@@ -35,13 +35,19 @@ public class SystemMessages {
             "...the Tax Man.\n" +
             "(sometimes stories only have one chapter)\n\n";
     public static final String harshKnocks = ", after a long night of drinking at the Grumpy Tavern, \n\tyou wake up to some harsh knocks at your door.\n";
-    public static final String outOfBed = "\tYou get out of bed and start looking around the room.\tYour head aches from the previous night's merriment,\n\tIt's far too bright, you asked the innkeeper for a curtain to block the window weeks ago,\n\tbut they told you you need to pay your back rent first.\n\tThe knocking continues...\n";
+    public static final String outOfBed = "\tYou get out of bed and start looking around the room.\tYour head aches from the previous night's merriment,\n" +
+        "\tIt's far too bright, you asked the innkeeper for a curtain to block the window weeks ago,\n\tbut they told you you need to pay your back rent first.\n" +
+        "\tThe knocking continues...\n";
     public static final String pressEnterPrompt = "Press Enter to continue.";
-    public static final String ignoreKnocks1part1 = "\tYou try and drown out the sound by burying your head under some dirty clothes you're using as a pillow.\n\tYou tell yourself that whatever is knocking is a problem for future ";
+    public static final String ignoreKnocks1part1 = "\tYou try and drown out the sound by burying your head under some dirty clothes you're using as a pillow.\n" +
+        "\tYou tell yourself that whatever is knocking is a problem for future ";
     public static final String ignoreKnocks1part2 = ".\n\tNevertheless...the knocking persists.";
     public static final String ignoreKnocks2 = "\tUnfortunately, your tactic of merely ignoring your life's problems continues its losing streak.\n\tThe knocking persists.\n";
     public static final String ignoreKnocks3 = "\tYou must still be drunk.\n\tYou fall out of bed, despite your protestations.\n";
-    public static final String actionHelperPrompt = "To act, type and enter one of the following verbs below, followed by what you want to do with that action.\nIf you have to write this down, don't worry, I'm the only one judging you.\nYou should be happy I'm even telling you this much!\n\n\tmove\n\tlook\n\ttake\n\tuse\n\tcheck\n\thelp\n\tquit\n";
+    public static final String actionHelperPrompt = "To act, type and enter one of the following verbs below, followed by what you want to do with that action.\n" +
+            "If you have to write this down, don't worry, I'm the only one judging you.\nYou should be happy I'm even telling you this much!\n\n\tmove (Makes you move either north, south, east, or west.)\n" +
+        "\tlook (Look at an object.)\n\ttake (Interact with an object.)\n\tuse (Use an item in your inventory.)\n\tcheck (Checks all items within your inventory.)\n\thelp (Brings this message back up.)\n" +
+        "\tquit (Quits the game.)\n";
     public static final String welcomePlayer = ", welcome  to Jork!\nA text-based Role-Playing game\nwhere you choose your journey!\n";
     public static final String gameOver = "Your journey has now come to an end...";
     public static final String replayPrompt = "Would you like to play again? (Y/N)";
