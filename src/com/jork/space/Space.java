@@ -11,18 +11,21 @@ import com.jork.model.Player;
  * @version 1.2
  */
 public class Space {
-    private boolean itemAvailable = true;
+    private boolean itemAvailable;
     private final String describeSpace;
     private final String describeSpaceWithoutItem;
     public final Item item;
     public final Item nonInvItem;
+    public final Item secretItem;
 
 
     public Space(Builder builder) {
+        this.itemAvailable = builder.itemAvailable;
         this.describeSpace = builder.describeSpace;
         this.describeSpaceWithoutItem = builder.describeSpaceWithoutItem;
         this.item = builder.item;
         this.nonInvItem = builder.nonInvItem;
+        this.secretItem = builder.secretItem;
     }
 
 
@@ -39,13 +42,18 @@ public class Space {
 
     public Item getNonInvItem() {return nonInvItem;}
 
+    public Item getSecretItem() {return secretItem;}
+
     public static class Builder {
+        private Boolean itemAvailable;
         private final String describeSpace;
         private String describeSpaceWithoutItem;
         private Item item;
         private Item nonInvItem;
+        private Item secretItem;
 
-        public Builder(String describeSpace) {
+        public Builder(Boolean itemAvailable,String describeSpace) {
+            this.itemAvailable = itemAvailable;
             this.describeSpace = describeSpace;
         }
 
@@ -64,17 +72,22 @@ public class Space {
             return this;
         }
 
+        public Builder secretItem(Item secretItem) {
+            this.secretItem = secretItem;
+            return this;
+        }
+
         public Space build() {
             return new Space(this);
         }
     }
 
     public String getSpaceDescription() {
-        if (itemAvailable)  {return describeSpace;}
+        if (itemAvailable || item == null)  {return describeSpace;}
         else {return describeSpaceWithoutItem;}
     }
 
-    public Item take(String noun) {
+    public Item take(String noun, Player player, Inventory inventory) {
         if (noun.toUpperCase().equals(item.name()) && itemAvailable) {
             itemAvailable = false;
             return item;

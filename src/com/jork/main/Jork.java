@@ -1,6 +1,7 @@
 package com.jork.main;
 
 import com.jork.items.Inventory;
+import com.jork.items.Item;
 import com.jork.model.Player;
 import com.jork.model.SystemMessages;
 import com.jork.space.Space;
@@ -92,21 +93,23 @@ public class Jork {
             String[] inputs = answer.split(" ");
             //TODO:make varied entries for different outcomes, ie array size 1, 3, etc.
             if (inputs.length != 2) {
-                System.out.print("You must specify only an action and target/direction.");
+                System.out.print("You must specify an action and target/direction.");
                 action(player);
             } else {
                 verb = inputs[0];
                 noun = inputs[1];
             }
-            System.out.println(verb);
-            System.out.println(noun);
             switch (verb.toLowerCase()) {
                 case MOVE: space = map.move(noun);
-                    System.out.println(space.getClass().getSimpleName());
+                    if (space.getNonInvItem().equals(Item.DOOR)) {
+                        if(space.yesOrNo() && inventory.hasItem(Item.KEY)) {
+                            space.use(inventory, "key", player);
+                        }
+                    }
                     break;
                 case USE: space.use(inventory, noun, player);
                     break;
-                case TAKE: inventory.add(space.take(noun));
+                case TAKE: inventory.add(space.take(noun, player, inventory));
                     break;
                 case LOOK: System.out.println(space.look(noun));
                     break;

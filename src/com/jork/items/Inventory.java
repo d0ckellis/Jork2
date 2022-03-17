@@ -21,7 +21,7 @@ public class Inventory {
             item.setItemInInventory();
             System.out.println(addedItem(item));
         } else {
-            System.out.println("You don't want that.");
+            System.out.println("You either can't or don't know how, you decide.");
         }
     }
 

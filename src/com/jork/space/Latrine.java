@@ -28,7 +28,7 @@ public class Latrine extends Space {
     }
     public static class Builder extends Space.Builder{
         public Builder(String describeSpace) {
-            super(describeSpace);
+            super(true, describeSpace);
         }
 
         public Latrine build() {

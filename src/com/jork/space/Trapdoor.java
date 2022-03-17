@@ -46,7 +46,7 @@ public class Trapdoor extends Space {
     }
     public static class Builder extends Space.Builder{
         public Builder(String describeSpace) {
-            super(describeSpace);
+            super(true, describeSpace);
         }
 
         public Trapdoor build() {

@@ -30,6 +30,7 @@ public class Description {
             "\tI'll let you decide which is the case.\n" +
             "\tYou can barely make out a horse pen across from your window if you squint.\n" +
             "\tMight be a good escape if your knees can handle the fall!";
+    String s2AltDescription = "test";
 
     String s3Description =
             "\tYou approach the armoire. The wood looks worn out and the mirror faded.\n" +

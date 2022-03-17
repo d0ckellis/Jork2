@@ -8,15 +8,38 @@ import java.util.Random;
 
 public class Door extends Space {
     public Boolean isDoorOpen;
+    private Boolean isKeyFound = false;
 
 
     public Door(Builder builder) {
         super(builder);
     }
 
+    public Boolean getKeyFound() {return isKeyFound;}
+
+    public void setKeyFound() {
+        if(isKeyFound = false) {
+            isKeyFound = true;
+        }
+    }
+    public String getSpaceDescription() {
+        if (!isKeyFound) {
+            return getDescribeSpace();
+        } else {
+            return getDescribeSpaceWithoutItem();
+        }
+    }
+
     private void setIsDoorOpen() {
         if(isDoorOpen = false) {
             isDoorOpen = true;
+        }
+    }
+    public Item take(String noun, Player player, Inventory inventory) {
+        if (noun.toUpperCase().equals(secretItem.name()) && player.getHasHungRug() && !inventory.hasItem(Item.KEY)) {
+            return secretItem;
+        } else {
+            return Item.EMPTY;
         }
     }
     public void use(Inventory inventory, String noun, Player player) {
@@ -84,7 +107,7 @@ public class Door extends Space {
     public static class Builder extends Space.Builder{
 
         public Builder(String describeSpace) {
-            super(describeSpace);
+            super(false, describeSpace);
         }
 
         public Door build() {
