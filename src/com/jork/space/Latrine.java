@@ -18,7 +18,7 @@ public class Latrine extends Space {
     }
     public void useLatrine(Player player) {
         if(player.getHasWetParchment()) {
-            System.out.println(SystemMessages.latrine_dip);
+            System.out.println(SystemMessages.latrineDip);
         } else {
             System.out.println("\tNot while everyone is watching.");
         }

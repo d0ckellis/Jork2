@@ -25,12 +25,12 @@ public class Armoire extends Space {
             int result = new Random().nextInt(20) + 1 + player.getIntelligence();
             if (result > 14) {
                 player.setHasSeenGlint();
-                System.out.println(SystemMessages.armoire_glintSeen);
+                System.out.println(SystemMessages.seeGlintAtArmoire);
             } else {
                 System.out.println("\tYour reflection doesn't look right. You weren't this ugly the last time you checked.");
             }
         } else {
-            System.out.println(SystemMessages.armoire_glintSeen);
+            System.out.println(SystemMessages.seeGlintAtArmoire);
         }
     }
 

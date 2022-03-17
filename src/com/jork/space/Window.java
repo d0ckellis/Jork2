@@ -53,12 +53,12 @@ public class Window extends Space {
         if (!isWindowOpen) {
             System.out.println("\tThe window is painted shut.\n");
             if (inventory.hasItem(Item.SWORD)) {
-                System.out.println(SystemMessages.window_swordPrompt);
+                System.out.println(SystemMessages.openWithSword);
                 setIsWindowOpen();
                 if (yesOrNo()) {
-                    System.out.println(SystemMessages.window_opened);
+                    System.out.println(SystemMessages.openedWindow);
                     if (yesOrNo()) {
-                        System.out.println(SystemMessages.window_death);
+                        System.out.println(SystemMessages.deathFromWindow);
                         //end game somehow
                         System.out.println(SystemMessages.quitMessage);
                         System.exit(0);
@@ -73,7 +73,7 @@ public class Window extends Space {
                 inventory.remove(Item.NAILS);
                 inventory.remove(Item.RUG);
                 setIsRugHung();
-                System.out.println(SystemMessages.window_hangedRug);
+                System.out.println(SystemMessages.rugHungInWindow);
             } else {
                 System.out.println("\tYou need something to hammer them with. You're hard-headed, but not that hard.");
             }
@@ -86,7 +86,7 @@ public class Window extends Space {
             inventory.remove(Item.NAILS);
             inventory.remove(Item.RUG);
             setIsRugHung();
-            System.out.println(SystemMessages.window_hangedRug);
+            System.out.println(SystemMessages.rugHungInWindow);
         }
     }
 

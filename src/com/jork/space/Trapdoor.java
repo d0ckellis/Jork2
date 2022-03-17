@@ -32,7 +32,7 @@ public class Trapdoor extends Space {
         if (inventory.hasItem(Item.RUG) || player.getHasHungRug() && !getIsTrapDoorOpen()) {
             int result = new Random().nextInt(20) + 1 + player.getStrength();
             if (result >= 15) {
-                System.out.println(SystemMessages.td_open);
+                System.out.println(SystemMessages.openTrapdoor);
                 inventory.add(Item.NECKLACE);
                 player.setIntelligence(player.getIntelligence() + 5);
             } else {

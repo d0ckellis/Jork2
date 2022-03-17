@@ -80,8 +80,8 @@ public class Description {
             "\tBut, you just want it to stop. Do you open it?";
 
     String s8Description =
-            "\tYou pick up your cloak from the chair.\n" +
-            "\tIt's full of holes, but for some reason this town has a no cloak, no boots, no service policy, so you keep wearing it.\n" +
+            "\tYour holy cloak sits on the chair. You aren't religious, it just has holes in it.\n" +
+            "\tFor some reason this town has a no cloak, no boots, no service policy, so you keep wearing it.\n" +
             "\tYou should really find a job soon as winter is coming and this cloak won't hold out much longer\n" +
             "\tIs something you keep telling yourself." +
             "\tThere's a jar you've used as a latrine in the corner. It's filled with...liquid. Gross.\n";

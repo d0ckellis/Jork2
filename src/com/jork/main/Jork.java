@@ -105,11 +105,7 @@ public class Jork {
             }
             switch (verb.toLowerCase()) {
                 case MOVE: space = map.move(noun);
-                    if (space.getNonInvItem().equals(Item.DOOR)) {
-                        if(space.yesOrNo() && inventory.hasItem(Item.KEY)) {
-                            space.use(inventory, "key", player);
-                        }
-                    }
+                    moveIntoDoor();
                     break;
                 case USE: space.use(inventory, noun, player);
                     break;
@@ -145,7 +141,15 @@ public class Jork {
             new ProcessBuilder("cls").inheritIO().start().waitFor();
         }
     }
-
+    private void moveIntoDoor() {
+        if (space.getNonInvItem().equals(Item.DOOR)) {
+            if(space.yesOrNo()) {
+                space.use(inventory, "key", player);
+            } else {
+                System.out.println(SystemMessages.ignoreDoorKnocks);
+            }
+        }
+    }
     public void gameOver() {
         System.out.println(SystemMessages.quitMessage);
         System.exit(0);

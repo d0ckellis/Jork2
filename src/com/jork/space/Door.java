@@ -58,20 +58,20 @@ public class Door extends Space {
         if (inventory.hasItem(Item.KEY)) {
             setIsDoorOpen();
             Random random = new Random();
-            System.out.println(SystemMessages.door_opened);
+            System.out.println(SystemMessages.openDoor);
             String answer = Jork.CONSOLE.next();
             Jork.CONSOLE.nextLine();
             switch (answer.toUpperCase()) {
                 case "FIGHT":
                     if (random.nextInt(20) + 1 + player.getStrength() > 20) {
-                        System.out.println(SystemMessages.door_fight);
+                        System.out.println(SystemMessages.fight);
                     } else {
                         System.out.println("\tYou stab grue in the chest, but apparently Half-Orc hearts aren't located in the same place as yours.\n" + "\tYour gambit is unsuccessful, you are eaten by Grue.");
                     }
                     break;
                 case "OUTWIT":
                     if (random.nextInt(20) + 1 + player.getIntelligence() > 20) {
-                        System.out.println(SystemMessages.door_wit);
+                        System.out.println(SystemMessages.wittyDoor);
                     } else {
                         System.out.println("\tYour ruse is unsuccessful, you are eaten by Grue.");
                         //TODO end game
@@ -80,6 +80,10 @@ public class Door extends Space {
                 default:
                     System.out.println("You've chosen death.\n\n");
             }
+        } else {
+            System.out.println("\tThe door is locked, you must have locked it in a drunken stupor.\n" +
+                    "\tYou will need to find the key to unlock it.\n" +
+                    "\tIs this what hell is like?");
         }
     }
     public void useSword(Inventory inventory, Player player) {
@@ -100,7 +104,7 @@ public class Door extends Space {
         if(inventory.hasItem(Item.KEY)) {
             useKey(inventory, player);
         } else {
-            System.out.println(SystemMessages.door_locked);
+            System.out.println(SystemMessages.lockedDoor);
         }
     }
     public static class Builder extends Space.Builder{
