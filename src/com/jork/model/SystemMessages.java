@@ -47,7 +47,15 @@ public class SystemMessages {
     public static final String replayPrompt = "Would you like to play again? (Y/N)";
     public static final String namePrompt = "What's our hero's name?\n> ";
     public static final String perkPrompt = "Are you strong, smart, or swift?\n> ";
-    public static final String quitMessage = "Quitting Jork... See you again!";
+    public static final String quitMessage = "" +
+                "  ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████       ▄██████▄   ▄█    █▄     ▄████████    ▄████████\n" +
+                "  ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███      ███    ███ ███    ███   ███    ███   ███    ███\n" +
+                " ▄███          ███    ███ ███   ███   ███  ▄███▄▄▄          ███    ███ ███    ███  ▄███▄▄▄      ▄███▄▄▄▄██▀\n" +
+                "▀▀███ ████▄  ▀███████████ ███   ███   ███ ▀▀███▀▀▀          ███    ███ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀  \n" +
+                "  ███    ███   ███    ███ ███   ███   ███   ███    █▄       ███    ███ ███    ███   ███    █▄  ▀███████████\n" +
+                "  ███    ███   ███    ███ ███   ███   ███   ███    ███      ███    ███ ███    ███   ███    ███   ███    ███\n" +
+                "  ████████▀    ███    █▀   ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████   ███    ███\n" +
+                "                                                                                                 ███    ███";
 
     /**
      * Strings used in response to actions
